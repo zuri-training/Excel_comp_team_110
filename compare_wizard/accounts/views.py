@@ -18,4 +18,4 @@ def login_user(request):
             # message.success(request, "there was an error")
             return redirect('login')
     else:
-        return render(request, 'accounts/login.html', {})
+        return render(request, 'registration/login.html', {})

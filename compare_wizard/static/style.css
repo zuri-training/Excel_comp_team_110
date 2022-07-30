@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.body-wrap{
+	background: #CCD8E8;
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+}
+
+
+/* header styles start */
+.site-header{
+	display: flex;
+	padding: 50px 100px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar ul {
+	display: flex;
+	align-items: center;
+}
+
+.navbar ul li{
+	margin: 0 15px;
+	list-style: none;
+	font-size: 16px;
+	color: #000000;
+}
+
+.button{
+	padding: 10px 25px;
+	background-color: #023E8A;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 500;
+	width: 100px;
+	height: 56px;
+	border-radius: 10px;
+}
+
+.button:hover{
+	background-color: #001e45;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+
+/* header styles end */
+
+section{
+	margin: 30px 0px;
+}
+/* hero styles start */
+.hero{
+	display: flex;
+	padding: 50px 100px;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.hero-left,
+.hero-right{
+	/* width: 30%; */
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	/* if you dare change this weight and i catch you......YOU ARE DEAD!! #thisisOreoluwa #choosewisely */
+}
+
+.hero-left{
+	line-height: 25px;
+}
+
+.hero-title{
+	color: #000000;
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.hero-left span{
+	color: #023E8A;
+}
+
+.hero-paragraph,
+.hero-left div{
+	margin: 25px 0px;
+}
+
+/* end of hero*/
+
+
+/* section2 starts */
+.section2{
+	display: flex;
+	padding: 50px 100px;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.section2 .list{
+	display: flex;
+	justify-content: space-between;
+	width: 800px;
+}
+
+.list p{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.list p .circle{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background-color: #023E8A;
+}
+.list p span{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.list p i{
+	font-size: 56px;
+	color: #CCD8E8;
+}
+
+.list .icon-text{
+	font-size: 24px;
+	font-weight: 700;
+	margin-top: 15px;
+}
+/* hero styles end */
+
+
+/* feature starts */
+
+.features{
+	width: 100%;
+	display: flex;
+	padding: 50px 100px;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.features1,
+.features2{
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	padding: 50px 0px;
+}
+
+.feature-image,
+.features-header{
+	width: 500px;
+}
+
+.feature-image img{
+	width: 500px;
+	margin-top: -80px;
+}
+
+.features-title{
+	font-weight: 700;
+	color: #000000;
+}
+
+.features-title span{
+	color: #023E8A;
+}
+
+.features-paragraph{
+	line-height: 25px;
+	color: #000000;
+	margin: 25px 0px;
+}
+
+
+/* start footer */
+
+.footer-container{
+	background-color: #023E8A;
+}
+
+.site-footer{
+	width: 100%;
+	display: flex;
+	padding: 50px 100px;
+	justify-content: space-around;
+}
+
+.footer-copyright{
+	line-height: 25px;
+	color: #ffffff;
+	margin-top: 25px;
+}
+
+.footer-links li,
+.footer-socials li{
+	list-style: none;
+	line-height: 35px;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.footer-links a,
+.footer-socials a{
+	color: #ffffff;
+}
+
+.footer-links a:hover,
+.footer-socials a:hover{
+	color: #b6b4b4;
+}
