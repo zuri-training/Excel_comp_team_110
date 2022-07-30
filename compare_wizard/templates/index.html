@@ -405,13 +405,20 @@
         <li>
           <a href="#">Home</a>
         </li>
-
-        <li>
-          <a href="{% url 'login' %}">Login</a>
-        </li>
-        <li>
-          <a class="button button-sm button-shadow" href="#">Sign Up</a>
-        </li>
+        {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'logout' %}">Logout</a>
+          </li>
+        {% else %}
+       
+          <li>
+            <a href="{% url 'login' %}">Login</a>
+          </li>
+          <li>
+            <a class="button button-sm button-shadow" href="{% url 'register' %}">Sign Up</a>
+          </li>
+      
+        {% endif %}
       </ul>
     </nav>
   </header>
@@ -595,12 +602,17 @@
           <li>
             <a href="#">Community</a>
           </li>
-          <li>
-            <a href="#">Sign UP</a>
-          </li>
-          <li>
-            <a href="#">Login</a>
-          </li>
+          
+            
+            <div>
+            <li>
+              <a href="#">Sign UP</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+          </div>
+        
         </ul>
       </div>
 

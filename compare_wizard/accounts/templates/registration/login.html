@@ -1,24 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<div class="shadow p-4 mb-5 bg-body rounded">
     <h1>Login</h1>
 
     <form action="" method="POST">
         {% csrf_token %}
         
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="Username" placeholder="Username">
-            <label for="floatingInput">Username</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="password" class="form-control" name="Password" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
+        
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="test" class="form-control" name="username" aria-describedby="emailHelp">
+            
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password">
+          </div>
         <div class="form-floating mb-3">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-        
-            
+                    
         <!-- <input type="submit" value="submit" class="btn btn-secondary"> -->
     </form>
+
+</div>
 {% endblock content %}

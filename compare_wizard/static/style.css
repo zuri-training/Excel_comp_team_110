@@ -21,6 +21,11 @@
 	align-items: center;
 }
 
+/* .header-links .log{
+	display: flex;
+	flex-direction: row;
+} */
+
 .navbar ul {
 	display: flex;
 	align-items: center;
