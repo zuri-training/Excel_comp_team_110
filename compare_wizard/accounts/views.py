@@ -14,7 +14,8 @@ def login_user(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page.
-            return redirect('home')
+            # return redirect("dashboard:workspace.html")
+            return redirect('workspace')
         else:
             # Return an 'invalid login' error message.
             messages.success(request, ("There was an error, try again"))

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- Code goes here -->
+<header>
+
+</header>
+<main class="community-page">
+  <section class="community-banner">
+    <h2>Compare Wizard Community</h2>
+    <p>Explore over 500+ data analysis all by our real life community members</p>
+  </section>
+  <section class="community-search">
+    <div class="search-bar">
+      <form method="" action="" id="">
+        <input id="search" name="search" type="text" placeholder="Search..." />
+      </form>
+    </div>
+    <div class="community-result">
+      <div class="spreadsheet-snippet">
+        <p class="spreadsheet-title">Annual Fee.xlsx</p>
+        <div class="spreadsheet-img-container">
+          <img src="" alt="" class="spreadsheet-img">
+        </div>
+      </div>
+      <div class="spreadsheet-user">
+        <div class="user-details">
+            {% load static %} <img class="user-img" src={% static "images/313668.png" %} alt="user details icon">
+          <p class="user-name">Wanten</p>
+        </div>
+        <div class="spreadsheet-interaction">
+          <div class="likes">
+            {% load static %} <img class="user-img" src={% static "images/icons8-heart-50.png" %} alt="user img icon">
+            <p class="like-count">100</p>
+          </div>
+          <div class="views">
+            {% load static %} <img class="user-img" src={% static "images/icons8-view-64.png" %} alt="user img icon">
+            <p class="view-count">500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="community-result">
+      <div class="spreadsheet-snippet">
+        <p class="spreadsheet-title">Annual Fee.xlsx</p>
+        <div class="spreadsheet-img-container">
+          <img src="" alt="" class="spreadsheet-img">
+        </div>
+      </div>
+      <div class="spreadsheet-user">
+        <div class="user-details">
+            {% load static %} <img class="user-img" src={% static "images/313668.png" %} alt="user-img icon">
+          <p class="user-name">Wanten</p>
+        </div>
+        <div class="spreadsheet-interaction">
+          <div class="likes">
+            {% load static %} <img class="user-img" src={% static "images/icons8-heart-50.png" %} alt="icon8-heart">
+            <p class="like-count">100</p>
+          </div>
+          <div class="views">
+            {% load static %} <img class="user-img" src={% static "images/icons8-view-64.png" %} alt="user img icon">
+            <p class="view-count">500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+
+</footer>
+
+{% endblock content %}
