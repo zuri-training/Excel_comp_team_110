@@ -20,7 +20,6 @@
     font-weight: 700;
 }
 .community-search {
-    width: 90vw;
     margin: auto;
     padding-top: 3em;
     padding-bottom: 4em;
@@ -120,4 +119,14 @@
     color: #807f7ffd;
     font-size: .75em;
     font-weight: 800;
+}
+
+.col-sm-3{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+}
+
+.col-sm-9{
+    /* margin-left: 25%; */
 }

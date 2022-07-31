@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %}
 
-<nav class="navbar navbar-inverse visible-xs">
+<!-- <nav class="navbar navbar-inverse visible-xs">
   <div class="container-fluid">
     <div class="navbar-header">
       <button
@@ -23,16 +23,16 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
       <h2>Logo</h2>
       <ul class="nav nav-pills nav-stacked d-flex flex-column">
-        <li class="active"><a href="#section1">Workspace</a></li>
-        <li><a href="#section2">Projects</a></li>
-        <li><a href="#section3">Community</a></li>
+        <li class="active"><a href="{% url 'workspace' %}">Workspace</a></li>
+        <li><a href="{% url 'project' %}">Projects</a></li>
+        <li><a href="{% url 'community' %}">Community</a></li>
       </ul>
       <br />
     </div>
