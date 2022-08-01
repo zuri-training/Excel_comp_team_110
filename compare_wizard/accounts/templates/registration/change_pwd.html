@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- code for change password page goes below -->
+
+<div class="pwd-body">
+    <div class="pwd-window">
+        <div class="change-pwd pwd-wrapper">
+            <div class= "change-pwd-top pwd-heading">
+                {% load static %} <img src={% static "images/wizard-logo.png" %} alt="">
+                <h2 class= "pwd-heading-text">Change Password</h2>
+            </div>
+            <div class= "change-pwd-bottom pwd-bottom">
+                <div>
+                    <form class="pwd-form" action="">
+                        <div class="input-wrapper">
+                            <label for="crt-password" class="">Current Password</label><br>
+                            <input type="password" id="crt-password" name="crt-password" placeholder="**********">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="new-password" class="">New Password</label><br>
+                            <input type="password" id="new-password" name="new-password" placeholder="**********">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="rt-password" class="">Confirm New Password</label><br>
+                            <input type="password" id="rt-password" name="rt-password" placeholder="**********">
+                        </div>
+                    </form>
+                    <button class="pwd-btn"><a href="#">Change Password</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

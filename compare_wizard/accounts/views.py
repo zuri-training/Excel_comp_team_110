@@ -49,3 +49,6 @@ def register_user(request):
 
 def profile_user(request):
   return render(request, 'registration/profile.html')
+
+def change_password(request):
+    return render(request, 'registration/change_pwd.html')
