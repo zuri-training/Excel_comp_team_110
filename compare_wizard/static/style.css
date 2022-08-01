@@ -38,6 +38,17 @@
 	color: #000000;
 }
 
+.navbar ul li a{
+	text-decoration: none;
+	color: #000000;
+}
+
+a,
+.navbar ul li a.button{
+	text-decoration: none;
+	color: #ffffff;
+}
+
 .button{
 	padding: 10px 25px;
 	background-color: #023E8A;
@@ -79,13 +90,14 @@ section{
 }
 
 .hero-left{
-	line-height: 25px;
+	line-height: 30px;
 }
 
 .hero-title{
 	color: #000000;
 	font-size: 40px;
 	font-weight: 700;
+	line-height: 50px;
 }
 
 .hero-left span{
@@ -189,6 +201,50 @@ section{
 	margin: 25px 0px;
 }
 
+/* testimony styling starts here */
+.testimony{
+	display: flex;
+	flex-direction: column;
+	padding: 20px 150px;
+}
+
+.testimony-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+
+.testimony-title span{
+    color: #023E8A;
+}
+
+.testimony1,
+.testimony2{
+	display: flex;
+	align-items: center;
+}
+
+.testimony img {
+    width: 240px;
+    height: 256px;
+    margin-right: 40px;
+}
+
+.testimony figcaption {
+    text-align: center;
+}
+
+.testimony .work {
+    color: red;
+	line-height: 10px;
+}
+
+.testimony p{
+	line-height: 25px;
+	padding: 0 50px;
+	font-weight: 600;
+}
 
 /* start footer */
 

@@ -415,7 +415,7 @@
             <a href="{% url 'login' %}">Login</a>
           </li>
           <li>
-            <a class="button button-sm button-shadow" href="{% url 'register' %}">Sign Up</a>
+            <a class="button" href="{% url 'register' %}">Sign Up</a>
           </li>
       
         {% endif %}
@@ -437,7 +437,7 @@
           at the tap of a simple button
         </p>
 
-        <div><a class="button hero-btn" href="#">Get started</a></div>
+        <div><a class="button" href="#">Get started</a></div>
       </div>
 
       <div class="hero-right">
@@ -508,6 +508,45 @@
               {% load static %} <img src={% static "images/feature2.png" %} alt="feature2 image">
             </div>
           </div>
+    </section>
+
+    <!-- customer testimonial starts here -->
+    <section class="section3">
+      <div class="testimony">
+        <h2 class="testimony-title">Our <span>Clients</span> are talking about us</h2>
+        <div class="testimony1">
+          <figure>
+            {% load static %} <img src={% static "images/male.png" %} alt="male client">
+            <figcaption>
+              <h3 class="client-name">Jonah Nwadike</h3>
+              <p class="profession"><small>Snr Data Engineer</small></p>
+              <p class="work"><small>Campo</small></p>
+            </figcaption>
+          </figure>
+          <p>
+            “ Compare wizard is a life saver, time saver and energy saver. Truly grateful i discovered this platform and
+            have been to increase my productivity especially in the fast paced environment where time is essential in
+            data delivery . “
+          </p>
+        </div>
+        <div class="testimony2">
+
+          <p>
+            “ Compare wizard is a life saver, time saver and energy saver. Truly grateful i discovered this platform and
+            have been to increase my productivity especially in the fast paced environment where time is essential in
+            data delivery . “
+          </p>
+          <figure>
+            {% load static %} <img src={% static "images/female.png" %} alt="female client">
+            <figcaption>
+              <h3 class="client-name">Sandra Peters</h3>
+              <p class="profession"><small>Advocate</small></p>
+              <p class="work"><small>Campbell and Co</small></p>
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
     </section>
 
   </main>
