@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .body-wrap{
 	background: #CCD8E8;
-	font-family: 'Open Sans', sans-serif;
 	width: 100%;
 }
 
@@ -43,8 +42,8 @@
 	color: #000000;
 }
 
-a,
-.navbar ul li a.button{
+.navbar ul li a.button,
+.hero-left a.button{
 	text-decoration: none;
 	color: #ffffff;
 }
