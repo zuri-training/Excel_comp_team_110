@@ -4,7 +4,7 @@ main.login-container {
   width: 100vw;
   height: 100vh;
   background: #ccd8e8;
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -17,6 +17,7 @@ main.login-container {
   flex-direction: column;
   justify-content: center;
   line-height: 35px;
+  /* width: 50vw; */
 }
 
 .login-container .left p {
@@ -31,6 +32,7 @@ main.login-container {
 
 .login-container .left img {
   padding: 30px 0px;
+  width: 100px;
 }
 
 .login-container .left form div {
