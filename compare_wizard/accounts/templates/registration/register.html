@@ -1,33 +1,40 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-{% if form.errors %}
-
+{% extends "base.html" %} {% block content %} {% if form.errors %}
 
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <p>There was an error with your form.....</p>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+  <p class="error-msg">There was an error with your form.....</p>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
 
 {% endif %}
+<main class="login-container">
+  <div class="register-left">
+    {% load static %} <img src={% static "images/login_logo.png" %} alt="login
+    logo"> {% load static %} <img src={% static "images/register.png" %}
+    alt="register page image" class="image">
+    <h1>HELLO, SIGN UP HERE!</h1>
+    <p>Sign up to enjoy access to compare and analyse files easily!</p>
+  </div>
 
-<div class="shadow p-4 mb-5 bg-body rounded">
-    <h1>Signup</h1>
-
-
+  <div class="register-right">
+    <div class="register-right-top">
+      <p>Sign up to Compare wizard to enjoy</p>
+      {% load static %} <img src={% static "images/howitworks.png" %} alt="hiw
+      infograph">
+    </div>
     <form action="{% url 'register' %}" method="POST">
-        {% csrf_token %}
-        
-        {{ form.as_p }}
-    
-        <div class="form-floating mb-3">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        
-            
-        <!-- <input type="submit" value="submit" class="btn btn-secondary"> -->
-    </form>
+      {% csrf_token %} {{ form.as_p }}
 
-</div>
+      <div class="form-floating mb-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+      <!-- <input type="submit" value="submit" class="btn btn-secondary"> -->
+    </form>
+  </div>
+</main>
 {% endblock content %}
