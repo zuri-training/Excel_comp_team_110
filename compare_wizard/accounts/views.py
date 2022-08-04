@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RegisterUserForm
-
+from .forms import RegisterUserForm, UpdateUserForm, UpdateProfileForm
+from django.contrib.messages.views import SuccessMessageMixin
+from django.views import View
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def login_user(request):
@@ -47,8 +50,27 @@ def register_user(request):
         'form':form,
     })
 
+# @login_required
+# def profile_user(request):
+#   return render(request, 'registration/profile.html')
+
+
+@login_required
 def profile_user(request):
-  return render(request, 'registration/profile.html')
+    if request.method == 'POST':
+        user_form = UpdateUserForm(request.POST, instance=request.user)
+        profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile is updated successfully')
+            return redirect(to='profile')
+    else:
+        user_form = UpdateUserForm(instance=request.user)
+        profile_form = UpdateProfileForm(instance=request.user)
+
+    return render(request, 'registration/profile.html', {'user_form': user_form, 'profile_form': profile_form})
 
 def change_password(request):
     return render(request, 'registration/change_pwd.html')
