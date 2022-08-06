@@ -48,9 +48,9 @@ class UpdateProfileForm(forms.ModelForm):
     gender = forms.CharField(max_length=100,
                                widget=forms.TextInput(attrs={'class': 'form-control'}))
     country = forms.CharField(max_length=100,
-                               required=True,
                                widget=forms.TextInput(attrs={'class': 'form-control'}))
-    
+    avatar = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control-file'}))
+
     class Meta:
-        model = Profile
-        fields = ['gender', 'country']
+        model = User
+        fields = ['gender', 'country', 'avatar']
