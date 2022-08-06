@@ -8,13 +8,13 @@
     <div class="side-profile profile-card">
         <div class="profile-summary">
             <div class="profile-img-container">
-                {% load static %} <img class="profile-img" id="profile-img" src={% static "images/wanten.png" %} alt="user profile image">
+                {% load static %} <img class="profile-img" id="profile-img" src="{{ user.profile.avatar.url }} alt="user profile image">
                 <a class="" href="#">
                     {% load static %}  <img class="change-img" src={% static "images/icons8-camera-30.png" %} alt="change profile image icon">
                 </a>
             </div>
-                <p class="profile-name">{{  user_form.username  }}</p>
-            <p class="profile-email">{{ user_form.email  }}</p>
+                <p class="profile-name">{{  user.username  }}</p>
+            <p class="profile-email">{{ user.email  }}</p>
         </div>
     </div>
     
