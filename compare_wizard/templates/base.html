@@ -8,8 +8,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{% static 'style.css' %}" />
-    <link rel="stylesheet" href="{% static 'workspace.css' %}" />
-    <link rel="stylesheet" href="{% static 'community.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'workspace.css' %}" /> -->
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}" />
     <link rel="stylesheet" href="{% static 'login.css' %}" />
     <link rel="stylesheet" href="{% static 'register.css' %}" />
 
@@ -41,7 +41,7 @@
   crossorigin="anonymous"></script> -->
 
     <!-- 	Adding IP api -->
-    <script>
+    <!-- <script>
       !(function () {
         const e = document.documentElement;
         if (
@@ -73,7 +73,11 @@
             });
         }
       })();
-    </script>
+    </script> -->
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"
+    ></script>
   </head>
   <body class="is-boxed has-animations">
     {% if messages %} {% for message in messages%}

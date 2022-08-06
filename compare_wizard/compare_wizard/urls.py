@@ -23,6 +23,7 @@ app_name = "dashboard"
 urlpatterns = [
     path('', views.home, name= 'home'),
     path('', views.login, name= 'login'),
+    # path('', views.dashboard, name= 'dashboard'),
     path('admin/', admin.site.urls),
     # path('', include('accounts.urls')),
     # path('', include('dashboard.urls')),
