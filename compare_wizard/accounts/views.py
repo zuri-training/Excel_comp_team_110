@@ -7,6 +7,8 @@ from .forms import RegisterUserForm, UpdateUserForm, UpdateProfileForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views import View
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 # Create your views here.
 
 def login_user(request):
@@ -18,10 +20,10 @@ def login_user(request):
             login(request, user)
             # Redirect to a success page.
             # return redirect("dashboard:workspace.html")
-            return redirect('workspace')
+            return redirect('profile')
         else:
             # Return an 'invalid login' error message.
-            messages.success(request, ("There was an error, try again"))
+            messages.success(request, ("Incorrect Password, try again"))
             return redirect('login')
     else:
         return render(request, 'registration/login.html', {})
@@ -42,8 +44,8 @@ def register_user(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            messages.success(request, ("Signing up successful!"))
-            return redirect('home')
+            messages.success(request, ("Sign up successful!"))
+            return redirect('login')
     else:
         form = RegisterUserForm()
     return render(request, 'registration/register.html', {
@@ -72,5 +74,23 @@ def profile_user(request):
 
     return render(request, 'registration/profile.html', {'user_form': user_form, 'profile_form': profile_form})
 
-def change_password(request):
-    return render(request, 'registration/change_pwd.html')
+# def change_password(request):
+#     if request.method == 'POST':
+#         form = PasswordChangeForm(request.user, request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             update_session_auth_hash(request, user)  # Important!
+#             messages.success(request, 'Your password was successfully updated!')
+#             return redirect('change_password')
+#         else:
+#             messages.error(request, 'Please correct the error below.')
+#     else:
+#         form = PasswordChangeForm(request.user)
+    # return render(request, 'accounts/change_password.html', {
+    #     'form': form
+    # })
+    # return render(request, 'registration/password_change_form.html')
+
+
+def password_done(request):
+    return render(request, 'registration/password_change_done.html')
