@@ -112,3 +112,10 @@ form {
     cursor: pointer;
     color: #023E8A;
 }
+/* .avatar-field .form-field input {
+    padding: 2em 0.75em !important;
+} */
+.form-field input[type="file"] {
+    height: max-content !important;
+    position: inherit !important;
+}

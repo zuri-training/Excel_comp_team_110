@@ -8,15 +8,15 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     gender = models.CharField(max_length=200, null=True, blank= True)
     country = CountryField(blank_label='(select country)')
-    avatar = models.ImageField(default='default.png', upload_to='profile_images')
+    avatar = models.ImageField(null=True, blank= True, default='default.png', upload_to='profile_images')
     
     def save(self, *args, **kwargs):
         super().save()
 
         img = Image.open(self.avatar.path)
 
-        if img.height > 100 or img.width > 100:
-            new_img = (100, 100)
+        if img.height > 180 or img.width > 180:
+            new_img = (180, 180)
             img.thumbnail(new_img)
             img.save(self.avatar.path)
 
