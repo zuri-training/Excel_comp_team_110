@@ -10,7 +10,7 @@
     <form action="" method="POST">
       {% csrf_token %}
 
-      <div class="mb-3">
+      <div class="mb-3">->
         <label for="exampleInputEmail1" class="form-label"
           >Username or Email</label
         >
@@ -26,7 +26,7 @@
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" class="form-control" name="password" placeholder="7777777" />
       </div>
-      <small class="forgot"><a href="#">Forgot Your Password?</a></small>
+      <small class="forgot"><a href="{% url 'password_reset' %}">Forgot Your Password?</a></small>
       <div class="form-floating mb-3">
         <button type="submit" class="btn btn-primary">Log in</button>
       </div>
