@@ -1,111 +1,72 @@
 {% extends "base.html" %} {% block content %}
 
-<!-- <nav class="navbar navbar-inverse visible-xs">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button
-        type="button"
-        class="navbar-toggle"
-        data-toggle="collapse"
-        data-target="#myNavbar"
-      >
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Workspace</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">community</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
+<div class="container">
+  <header>
+    <nav>
+      <div class="logo">
+        {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+      </div>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3 sidenav hidden-xs">
-      <h2>Logo</h2>
-      <ul class="nav nav-pills nav-stacked d-flex flex-column">
-        <li class="active"><a href="{% url 'workspace' %}">Workspace</a></li>
-        <li><a href="{% url 'project' %}">Projects</a></li>
-        <li><a href="{% url 'community' %}">Community</a></li>
-      </ul>
-      <br />
-    </div>
-    <br />
+      <div class="other-icons">
+        <div class="dropdown">
+          <button class="dropbtn">Compare ▼</button>
 
-    <div class="col-sm-9">
-      <div class="well">
-        <h4>Workspace</h4>
-        <p>Some text..</p>
+          <div class="dropdown-content">
+            <a href="#">Compare</a>
+            <a href="#">Compare & fix</a>
+            <a href="#">Compare, fix & merge</a>
+          </div>
+        </div>
+
+        <button class="btn-2">Analyse</button>
+
+        <p>Hi! <span>Wanten</span></p>
+
+        {% load static %} <img src={% static "images/profile.svg" %}
+        alt="profile-image" />
       </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Users</h4>
-            <p>1 Million</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Pages</h4>
-            <p>100 Million</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Sessions</h4>
-            <p>10 Million</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Bounce</h4>
-            <p>30%</p>
-          </div>
-        </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Side navigation -->
+    <div class="sidenav">
+      <a href="{% url 'workspace' %}">Workspace</a>
+      <a href="{% url 'project' %}">Projects</a>
+      <a href="{% url 'community' %}">Community</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="page-content">
+      <div class="box">
+        <input type="file" id="file" />
+        <label for="file"
+          >{% load static %} <img src={% static "images/upload.svg" %} alt="upload-icon"
+        /></label>
+
+        <h4>Upload files/Paste URL</h4>
+
+        <form>
+          <input type="text" placeholder="Paste URL..." name="file" />
+          <button class="btn" type="submit">Upload</button>
+        </form>
       </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="well">
-            <p>Text</p>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="well">
-            <p>Text</p>
-          </div>
-        </div>
+
+      <div class="box">
+        <input type="file" id="file" />
+        <label for="file"
+          >{% load static %} <img src={% static "images/upload.svg" %} alt="upload-icon"
+        /></label>
+
+        <h4>Upload files/Paste URL</h4>
+
+        <form>
+          <input type="text" placeholder="Paste URL..." name="file" />
+          <button class="btn" type="submit">Upload</button>
+        </form>
       </div>
     </div>
-  </div>
+  </main>
 </div>
 
 {% endblock content %}
