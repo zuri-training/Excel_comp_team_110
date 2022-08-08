@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+/* body {
+    background-color: #ccd8e8;
+} */
+.profile-wrapper {
+    display: flex;
+    padding: 2em;
+    /* height: 100vh; */
+    margin: auto;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.side-profile {
+    /* background-color: #023E8A; */
+    /* background-color: #CCD8E8; */
+    background-color: #023E8A;
+    padding: 2em 1em;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px #a5a6a8ab,
+                -1px 1px 2px #a5a6a89c;
+}
+.side-profile {
+    margin-right: 3em;
+}
+.profile-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1em;
+}
+.profile-img {
+    /* background-color: #f9f9f9; */
+    width: 180px;
+    height: 180px;
+    clip-path: circle();
+    margin: auto;
+    justify-content: center;
+    position: absolute;
+}
+.change-img {
+    padding: 3px;
+    width: 27px;
+    background: #f9f9f9;
+    clip-path: circle();
+    position: relative;
+    margin-right: 25px;
+    margin-top: 145px;
+}
+.profile-summary p {
+    text-align: center;
+    color: #f9fafb;
+} 
+.profile-name {
+    padding-top: 1em;
+    font-weight: 700;
+}
+.profile-email {
+    font-size: .9em;
+}
+.profile-details h2 {
+    /* font-weight: 800; */
+    color: #023E8A;
+    padding-bottom: .25em;
+    border-bottom: 1px solid #929292;
+}
+/* .profile-details form {
+    padding-left: .15em;
+} */
+form {
+    padding-top: .5em;
+}
+.form-field {
+    padding-bottom: .75em;
+}
+.form-field label {
+    display: inline-block;
+    width: 120px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #B7B7B7
+}
+.form-field input {
+    width: 220px;
+    padding: .5em .75em;
+    border: none;
+    outline: none;
+    color: #B7B7B7;
+}
+.form-field input:focus {
+    border-bottom: 1px solid #B7B7B7;
+    background-color: #f9fafb;
+
+}
+.change-btn {
+    margin-top: .5em;
+    margin-bottom: 1em;
+    margin-left: 150px;
+    border: none;
+    background-color: #fff;
+    color: #2BA7D0;
+    font-size: 14px;
+}
+.change-btn:hover {
+    cursor: pointer;
+    color: #023E8A;
+}

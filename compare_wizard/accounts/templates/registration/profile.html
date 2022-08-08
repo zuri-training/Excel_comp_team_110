@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Profile Page{% endblock title %}
+{% block content %}
+
+<!-- code for profile page below -->
+
+<div class="profile-wrapper">
+    <div class="side-profile profile-card">
+        <div class="profile-summary">
+            <div class="profile-img-container">
+                {% load static %} <img class="profile-img" id="profile-img" src="{{ user.profile.avatar.url }} alt="user profile image">
+                <a class="" href="#">
+                    {% load static %}  <img class="change-img" src={% static "images/icons8-camera-30.png" %} alt="change profile image icon">
+                </a>
+            </div>
+                <p class="profile-name">{{  user.username  }}</p>
+            <p class="profile-email">{{ user.email  }}</p>
+        </div>
+    </div>
+    
+    {% if user_form.errors %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <div id="form_errors">
+                {% for key, value in user_form.errors.items %}
+                    <strong>{{ value }}</strong>
+                {% endfor %}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <div class="profile-details profile-card">
+        <h2>Profile Information</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-field">
+                <label for="name">First Name</label>
+                {{ user_form.first_name }}
+                <br>
+            </div> 
+        
+            <div class="form-field">
+                <label for="name">Last Name</label>
+                <!-- <input type="text" id="lname" name="lname"> -->
+                {{ user_form.last_name }}
+                <br>
+            </div>
+            <div class="form-field">
+                <label for="name">Username</label>
+                <!-- <input type="text" id="u-name" name="u-name"> -->
+                {{ user_form.username }}
+                <br>
+            </div>
+            <div class="form-field">
+                <label for="email">email</label>
+                <!-- <input type="text" id="u-name" name="u-name"> -->
+                {{ user_form.email }}
+                <br>
+            </div>
+            <div class="form-field">
+                <label for="name">Gender</label>
+                <!-- <input type="text" id="gender" name="gender"> -->
+                {{ profile_form.gender }}
+                <br>
+            </div>
+            <div class="form-field">
+                <label for="name">Country</label>
+                <!-- <input type="text" id="country" name="country"> -->
+                {{ profile_form.country }}
+                <br>
+                <button type="submit" class="change-btn">Change</button>
+                <button type="reset" class="change-btn">Reset</button>
+            </div>
+        </form>
+        <form action="" method="POST">
+            <button  type="submit" class="change-btn"><a href="{% url 'password_change' %}">Change Password</a></button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
