@@ -14,13 +14,14 @@ main {
     /* background-color: #c4c0c0a2; */
 }
 .dashboard-community .community-banner h2 {
-    font-size: 4em;
+    font-size: 3.5em;
     width: 40vw;
-    margin: auto;
+    margin: 0 auto;
     line-height: 1.25em;
     padding-bottom: .5em;
 }
 .dashboard-community .community-banner p {
+    margin: 0 auto;
     font-weight: 700;
     font-size: 1.5em;
 }
@@ -150,4 +151,91 @@ main {
     color: #807f7ffd;
     font-size: .75em;
     font-weight: 800;
+}
+@media only screen and (max-width: 900px) {
+    dashboard-community .community-banner h2 {
+        font-size: 2.5em;
+        width: 40vw;
+        margin: 0 auto;
+        line-height: 1em;
+        padding-bottom: .5em;
+    }
+    .dashboard-community .community-banner p {
+        font-weight: 700;
+        font-size: 1em;
+    }
+    .dashboard-community .community-image-container {
+        padding-top: 2em;
+        width: 100%;
+        height: 300px;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .dashboard-community .community-banner {
+        padding: 4em 2em 3em;
+    }
+    .dashboard-community .community-banner h2 {
+        font-size: 3em;
+    }
+    .dashboard-community .community-banner p {
+        font-size: 1.25em;
+    }
+    .dashboard-community .community-image-container {
+        width: 90%;
+        height: 230px;
+        margin: auto;
+    }
+    .dashboard-community .community-output .search-bar {
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .dashboard-community .community-banner {
+        padding: 3em 2em 3em;
+    }
+    .dashboard-community .community-banner h2 {
+        font-size: 1.75em;
+    }
+    .dashboard-community .community-banner p {
+        font-size: 1em;
+    }
+    .dashboard-community .community-image-container {
+        width: 90%;
+        height: 170px;
+        margin: auto;
+    }
+    .dashboard-community .community-output .search-bar {
+        width: 40%;
+    }
+    .dashboard-community .community-output #search {
+        margin-top: -30px;
+        padding: 7px 40px;
+    }
+}
+    @media only screen and (max-width: 450px) {
+        .dashboard-community .community-banner {
+            padding: 2em 2em .8em;
+        }
+        .dashboard-community .community-banner h2 {
+            font-size: 1.5em;
+        }
+        .dashboard-community .community-banner p {
+            font-size: .8em;
+        }
+        .dashboard-community .community-image-container {
+            padding-top: 2em;
+            width: 90%;
+            height: 80px;
+            margin: auto;
+        }
+        .dashboard-community .community-output .search-bar {
+            width: 40%;
+        }
+        .dashboard-community .community-output #search {
+            margin-top: -30px;
+        }
+        .dashboard-community .community-output .spreadsheet-user {
+            display: flex;
+            flex-direction: column;
+        }
 }
