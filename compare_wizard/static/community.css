@@ -1,60 +1,96 @@
-
-.community-banner {
-    text-align: center;
-    padding: 10em 2em 5em;
-    background-color: #c4c0c0a2;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.community-banner h2 {
-    font-size: 3em;
+main {
+    background-color: #CCD8E8;
+}
+.dashboard-community .community-banner {
+    text-align: center;
+    padding: 5em 2em 3em;
+    /* background-color: #c4c0c0a2; */
+}
+.dashboard-community .community-banner h2 {
+    font-size: 4em;
     width: 40vw;
     margin: auto;
     line-height: 1.25em;
     padding-bottom: .5em;
 }
-.community-banner p {
+.dashboard-community .community-banner p {
     font-weight: 700;
+    font-size: 1.5em;
 }
-.community-search {
+.dashboard-community .community-image-container {
+    padding-top: 4em;
+    width: 100%;
+    height: 350px;
+}
+.dashboard-community .community-image-container img {
+    width: 90%;
+    height: 100%;
+}
+.dashboard-community .community-output {
+    width: 90vw;
     margin: auto;
-    padding-top: 3em;
+    padding-top: 1em;
     padding-bottom: 4em;
 }
-.search-bar {
+.dashboard-community .community-output .search-bar {
+    width: 30%;
     padding-bottom: 1em;
-}
-#search {
-    background: url("./images/icons8-search.svg");
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: 10px;
     margin: 0 auto;
+}
+.dashboard-community .community-output .search-bar img {
+    padding-left: 15px;
+}
+.dashboard-community .community-output #search {
+    width: 100%;
     display: block;
-    padding: 10px 40px;
-    border: 1px solid #c4c0c0a2;
+    margin-top: -35px;
+    padding: 10px 50px;
     border-radius: 5px;
+    border: 1px solid #023E8A;
+    background-color: #CCD8E8;
+    outline: none;
 }
-::placeholder {
-    color: rgb(133, 124, 124);
+.dashboard-community .community-output::placeholder {
+    color: #023E8A;
 }
-.community-result {
+.dashboard-community .community-output #search:hover {
+    background-color: #F9FAFB;
+}
+.dashboard-community .community-output #search:focus {
+    border: 3px solid #023E8A;
+    background-color: #F9FAFB
+}
+.dashboard-community .community-output .community-result {
     padding-top: 2em;
 }
-.spreadsheet-snippet {
+
+.dashboard-community .community-output .spreadsheet-img-container img {
+    width: 90%;
+    height: 80%;
+}
+.dashboard-community .community-output .spreadsheet-snippet {
     width: 100%;
     height: 400px;
-    background-color: #c4c0c0a2;
+    background-color: #f9f9f9;
     padding-top: 2em;
     padding-left: 2em;
     padding-right: 2em;
     display: flex;
     flex-direction: column;
 }
-.spreadsheet-user {
+.dashboard-community .community-output .spreadsheet-user {
     display: flex;
     justify-content: space-between;
     padding-top: 1em;
 }
-.spreadsheet-snippet p {
+.dashboard-community .community-output .spreadsheet-snippet p {
     padding: .6em 2em;
     font-size: .8em;
     margin-left: 2em;
@@ -63,7 +99,7 @@
     border-top-right-radius: 7px;
     background-color: rgb(185, 190, 190);
 }
-.spreadsheet-img-container {
+.dashboard-community .community-output .spreadsheet-img-container {
     background-color: rgb(185, 190, 190);
     width: 100%;
     height: 80%;
@@ -71,27 +107,27 @@
     margin: auto;
     margin-bottom: 3em;
 } 
-.spreadsheet-img {
+.dashboard-community .community-output .spreadsheet-img {
     background-color: rgba(217, 218, 219, 0.555);
     margin: auto;
     width: 95%;
     height: 90%;
 }
-.user-details,
-.likes,
-.views {
+.dashboard-community .community-output .user-details,
+.dashboard-community .community-output .likes,
+.dashboard-community .community-output .views {
     display: flex;
     width: max-content;
     padding-left: 1.5em;
     justify-content: space-between;
     align-items: center;
 }
-.user-img {
-    width: 35px;
+.dashboard-community .community-output .user-img {
+    width: 40px;
     height: 40px;
-    border: 2px solid #c4c0c0a2;
+    border: 2px solid #023E8A;
     border-radius: 50%;
-    padding-top: 3px;
+    object-fit: fill;
 }
 .user-name {
     padding-left: 15px;
@@ -105,7 +141,7 @@
 }
 .likes img, 
 .views img {
-    width: 25px;
+    width: 30px;
     height: 25px;
     padding-right: 5px;
 }
@@ -115,13 +151,3 @@
     font-size: .75em;
     font-weight: 800;
 }
-
-.col-sm-3{
-    position: fixed;
-    top: 0;
-    height: 100vh;
-}
-
-/* .col-sm-9{ */
-    /* margin-left: 25%; */
-/* } */
