@@ -2,6 +2,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 from .models import Profile
+from django_countries import widgets, countries
+from django_countries.widgets import CountrySelectWidget
 
 class RegisterUserForm(UserCreationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
@@ -40,11 +42,16 @@ class UpdateUserForm(forms.ModelForm):
         model = User
         fields = ['username', 'email', 'first_name', 'last_name']
 
+GENDER_CHOICES = [
+    ('prefer not to say', 'PREFER NOT TO SAY'),
+    ('female', 'FEMALE'),
+    ('others', 'OTHERS'),
+    ('male', 'MALE'),
+]
 class UpdateProfileForm(forms.ModelForm):
-    gender = forms.CharField(max_length=100,
-                               widget=forms.TextInput(attrs={'class': 'form-control'}))
-    country = forms.CharField(max_length=100,
-                               widget=forms.TextInput(attrs={'class': 'form-control'}))
+    gender = forms.CharField(label='Select gender',
+                               widget=forms.Select(choices=GENDER_CHOICES))
+    country = forms.ChoiceField(choices=countries)
     avatar = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control-file'}))
 
     class Meta:
