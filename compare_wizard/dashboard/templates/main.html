@@ -1,0 +1,205 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="workspace">
+  <header>
+    <div>
+      {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+    </div>
+    <div>
+      <nav class="navybar">
+        <a href="#">Workspace</a>
+        <a href="#">My Projects</a>
+        <a href="#">Community</a>
+        <!-- profile -->
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">
+            {% load static %} <img src={% static "images/profile.svg" %}
+            alt="profile image">
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <p><small>username</small></p>
+            <p><small>email</small></p>
+            <a href="#">Edit Profile</a>
+            <a href="#">Change Password</a>
+            <a href="#">Log out</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- after the navbar -->
+  <main>
+    <!-- new side bar -->
+
+    <div class="sideynav">
+      <a href="#">Highlight</a>
+      <a href="#">Clean</a>
+      <a href="#">Compare</a>
+      <a href="#">Merge</a>
+      <a href="#">Save Project</a>
+      <a href="#">Showcase</a>
+      <a href="#">Download</a>
+    </div>
+    <div class="page-content">
+      <div class="uploads">
+        <!-- my work -->
+        <div class="file">
+          {% load static %} <img src={% static "images/upload.svg" %}
+          alt="upload-icon"/>
+          <div>
+            <h4>File 1: Upload files/Paste URL</h4>
+            <input type="file" id="excel_file1" />
+          </div>
+        </div>
+        <!-- second file -->
+        <div class="file">
+          {% load static %} <img src={% static "images/upload.svg" %}
+          alt="upload-icon"/>
+          <div>
+            <h4>File 1: Upload files/Paste URL</h4>
+            <input type="file" id="excel_file2" />
+          </div>
+        </div>
+      </div>
+
+      <div class="workbox" id="for-one"></div>
+      <div class="workbox" id="for-two"></div>
+
+      <!-- <div class="workbox">
+        <input type="file" id="file" />
+        <label for="file">
+          {% load static %} <img src={% static "images/upload.svg" %}
+          alt="upload-icon"/>
+        </label>
+
+        <h4>Upload files/Paste URL</h4>
+
+        <form>
+          <input type="text" placeholder="Paste URL..." name="file" />
+          <button class="btn" type="submit">Upload</button>
+        </form>
+      </div> -->
+    </div>
+  </main>
+</div>
+
+<!-- dashboard JS -->
+<script>
+  /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function (e) {
+    if (!e.target.matches(".dropbtn")) {
+      var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains("show")) {
+        myDropdown.classList.remove("show");
+      }
+    }
+  };
+</script>
+
+// uploading
+<script>
+  const excel_file = document.getElementById("excel_file1");
+  const excel_file2 = document.getElementById("excel_file2");
+
+  excel_file.addEventListener("change", (event) => {
+    if (
+      ![
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.ms-excel",
+      ].includes(event.target.files[0].type)
+    ) {
+      document.getElementById("for-one").innerHTML =
+        "<div>Only .xlsx or .xls file format are allowed</div>";
+      excel_file.value = "";
+      return false;
+    }
+
+    var reader = new FileReader();
+    reader.readAsArrayBuffer(event.target.files[0]);
+    reader.onload = function (event) {
+      var data = new Uint8Array(reader.result);
+      var work_book = XLSX.read(data, { type: "array" });
+      var sheet_name = work_book.SheetNames;
+      var sheet_data = XLSX.utils.sheet_to_json(
+        work_book.Sheets[sheet_name[0]],
+        { header: 1 }
+      );
+
+      if (sheet_data.length > 0) {
+        var table_output = "<table>";
+        for (var row = 0; row < sheet_data.length; row++) {
+          table_output += "<tr>";
+          for (var cell = 0; cell < sheet_data[row].length; cell++) {
+            if (row == 0) {
+              table_output += "<th>" + sheet_data[row][cell] + "</th>";
+            } else {
+              table_output += "<td>" + sheet_data[row][cell] + "</td>";
+            }
+          }
+          table_output += "</tr>";
+        }
+        table_output += "</table>";
+        document.getElementById("for-one").innerHTML = table_output;
+      }
+      excel_file.value = "";
+    };
+  });
+  //   for the file 2
+
+  excel_file2.addEventListener("change", (event) => {
+    if (
+      ![
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.ms-excel",
+      ].includes(event.target.files[0].type)
+    ) {
+      document.getElementById("for-two").innerHTML =
+        "<div>Only .xlsx or .xls file format are allowed</div>";
+      excel_file2.value = "";
+      return false;
+    }
+
+    var reader = new FileReader();
+    reader.readAsArrayBuffer(event.target.files[0]);
+    reader.onload = function (event) {
+      var data = new Uint8Array(reader.result);
+      var work_book = XLSX.read(data, { type: "array" });
+      var sheet_name = work_book.SheetNames;
+      var sheet_data = XLSX.utils.sheet_to_json(
+        work_book.Sheets[sheet_name[0]],
+        { header: 1 }
+      );
+
+      if (sheet_data.length > 0) {
+        var table_output = "<table>";
+        for (var row = 0; row < sheet_data.length; row++) {
+          table_output += "<tr>";
+          for (var cell = 0; cell < sheet_data[row].length; cell++) {
+            if (row == 0) {
+              table_output += "<th>" + sheet_data[row][cell] + "</th>";
+            } else {
+              table_output += "<td>" + sheet_data[row][cell] + "</td>";
+            }
+          }
+          table_output += "</tr>";
+        }
+        table_output += "</table>";
+        document.getElementById("for-two").innerHTML = table_output;
+      }
+      excel_file2.value = "";
+    };
+
+    //   Hightlight duplicates
+    
+  });
+
+</script>
+{% endblock content %}
