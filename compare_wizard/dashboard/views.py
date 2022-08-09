@@ -9,3 +9,6 @@ def community(request):
 
 def project(request):
   return render(request, 'project.html')
+
+def dashboard(request):
+  return render(request, 'main.html')
