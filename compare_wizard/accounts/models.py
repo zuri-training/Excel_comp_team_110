@@ -28,17 +28,4 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
-<<<<<<< HEAD
 
-
-    # def save(self, *args, **kwargs):
-    #     super().save()
-
-    # img = Image.open(self.avatar.path)
-
-    # if img.height > 100 or img.width > 100:
-    #     new_img = (100, 100)
-    #     img.thumbnail(new_img)
-    #     img.save(self.avatar.path)
-=======
->>>>>>> 74fa60df5b2d5b187c050f7f1d3a5e259b34e8ed
