@@ -1,19 +1,29 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="body-container">
+<div class="container">
   <header>
     <nav>
-      <!-- <img src="./src/icon.svg" alt="" /> -->
-      {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
-      <div>
-        <select name="functions" id="">
-          <option value="c">Compare ▼</option>
-          <option value="cf">Compare&fix</option>
-          <option value="cfm">Compare, fix & marge</option>
-        </select>
-        <button id="btn-1" class="btn">Analyse</button>
+      <div class="logo">
+        {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+      </div>
+
+      <div class="other-icons">
+        <div class="dropdown">
+          <button class="dropbtn">Compare ▼</button>
+
+          <div class="dropdown-content">
+            <a href="#">Compare</a>
+            <a href="#">Compare & fix</a>
+            <a href="#">Compare, fix & merge</a>
+          </div>
+        </div>
+
+        <button class="btn-2">Analyse</button>
+
         <p>Hi! <span>Wanten</span></p>
-        <img src="./src/icon.png" id="icon" alt="" />
+
+        {% load static %} <img src={% static "images/profile.svg" %}
+        alt="profile-image" />
       </div>
     </nav>
   </header>
@@ -21,37 +31,39 @@
   <main>
     <!-- Side navigation -->
     <div class="sidenav">
-      <a href="#">Workspace</a>
-      <a href="project.html">Project</a>
-      <a href="community.html">Community</a>
+      <a href="{% url 'workspace' %}">Workspace</a>
+      <a href="{% url 'project' %}">Projects</a>
+      <a href="{% url 'community' %}">Community</a>
     </div>
 
     <!-- Page content -->
     <div class="page-content">
-      <div class="workbox">
+      <div class="box">
         <input type="file" id="file" />
         <label for="file"
-          ><img src="./icons/upload.svg" alt="upload-icon"
-        /></label>
+          >{% load static %} <img src={% static "images/upload.svg" %}
+          alt="upload-icon"/>
+        </label>
 
         <h4>Upload files/Paste URL</h4>
 
         <form>
-          <input type="text" placeholder="Paste URL . . ." name="file" />
+          <input type="text" placeholder="Paste URL..." name="file" />
           <button class="btn" type="submit">Upload</button>
         </form>
       </div>
 
-      <div class="workbox">
+      <div class="box">
         <input type="file" id="file" />
         <label for="file"
-          ><img src="./icons/upload.svg" alt="upload-icon"
-        /></label>
+          >{% load static %} <img src={% static "images/upload.svg" %}
+          alt="upload-icon" /></label
+        >
 
         <h4>Upload files/Paste URL</h4>
 
         <form>
-          <input type="text" placeholder="Paste URL . . ." name="file" />
+          <input type="text" placeholder="Paste URL..." name="file" />
           <button class="btn" type="submit">Upload</button>
         </form>
       </div>
