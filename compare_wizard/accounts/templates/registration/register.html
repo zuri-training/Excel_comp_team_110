@@ -16,7 +16,7 @@
     {% load static %} <img src={% static "images/login_logo.png" %} alt="login
     logo">
 
-    <h1>SIGN UP HERE</h1>
+    <h1>Sign Up Here</h1>
     <form action="{% url 'register' %}" method="POST">
       {% csrf_token %} {{ form.as_p }}
 
