@@ -35,10 +35,34 @@
   </header>
 
   <!-- after the navbar -->
-  <main id="dash" style="margin: 12% auto">
-    <a href="{% url 'dashboard' %}"><button>Start Project</button></a>
+  <main id="dash" >
+    {% comment %} style="margin: 12% auto">
+    <a href="{% url 'dashboard' %}"><button>Start Project</button></a> {% endcomment %}
     <!-- new side bar -->
+    <div>
+      <form action="{% url 'new_project' %}" method="post" enctype="multipart/form-data" id="p-form">
+          {% csrf_token %}
+          <div>
+              <label for="title">Project Name</label>
+              <input type="text" name="title" id="title" placeholder="new project">
+          </div>
+          <div>
+              <input type="checkbox" name="status" id="status" checked>
+              <label for="status">Visibility</label>
+          </div>
 
+          <input type="submit">
+
+          <p>Note Visibility checked means that the project will be public ***</p>
+      </form>
+  </div>
+  <div>
+      <ul>
+        {% for i in wanten %}
+        <li>{{ i.project_name }}, ____ {{ i.date_created }}, ___{{i.last_modified}}</li>
+        {% endfor %}
+      </ul>
+  </div>
     <!-- <div class="sideynav">
       <a href="#">Highlight</a>
       <a href="#">Clean</a>
