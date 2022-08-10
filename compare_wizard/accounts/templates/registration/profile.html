@@ -1,117 +1,137 @@
-{% extends "base.html" %}
-{% block title %}Profile Page{% endblock title %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <!-- Header nav-bar -->
-<div class="profile-page-view">
-    <header>
-        <!-- <div>
-            {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
-        </div> -->
-        <div>
-            <nav class="navybar">
-                <a href="#">Workspace</a>
-                <a href="#">My Projects</a>
-                <a href="#">Community</a>
-                <!-- profile -->
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction()">
-                    {% load static %} <img src={% static "images/profile.svg" %}
-                    alt="profile image">
-                    <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content" id="myDropdown">
-                        <p><small>username</small></p>
-                        <p><small>email</small></p>
-                        <a href="#">Edit Profile</a>
-                        <a href="#">Change Password</a>
-                        <a href="#">Log out</a>
-                    </div>
-                </div>
-            </nav>
+<div class="workspace">
+  <header>
+    <div>
+      {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+    </div>
+    <div>
+      <nav class="navybar">
+        <a href="{% url 'project' %}">My Projects</a>
+        <a href="{% url 'community' %}" target="_blank">Community</a>
+        <!-- profile -->
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">
+            {% load static %}
+            <img
+              src="{{ user.profile.avatar.url }} "
+              alt="user profile image"
+              class="propic"
+            />
+            <i class="fa fa-caret-down" onclick="myFunction()"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <p><small>{{ user.username }}</small></p>
+            <p><small>{{ user.email }}</small></p>
+            <a href="{% url 'profile' %}">Edit Profile</a>
+            <a href="{% url 'password_change' %}">Change Password</a>
+            <a href="{% url 'logout' %}">Log out</a>
+          </div>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-    <!-- main code for profile page below -->
-    <main class="profile-page-container">
-        {% if user_form.errors %}
-            <div class="alert alert-danger alert-dismissible" role="alert">
-                <div id="form_errors">
-                    {% for key, value in user_form.errors.items %}
-                        <strong>{{ value }}</strong>
-                    {% endfor %}
-                    </div>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-        {% endif %}
-        <div class="profile-wrapper">
-            <div class="side-profile profile-card">
-                <div class="profile-summary">
-                    <div class="profile-img-container">
-                        {% load static %} <img class="profile-img" id="profile-img" src="{{ user.profile.avatar.url }} " alt="user profile image">
-                    </div>
-                    <p class="profile-name">{{  user.username  }}</p>
-                    <p class="profile-email">{{ user.email  }}</p>
-                </div>
-            </div>
-            
-            <div class="profile-details profile-card">
-                <h2>Edit Profile</h2>
-                <form method="post" enctype="multipart/form-data" class="profile_form account_form">
-                    {% csrf_token %}
-                    <div class="form-field">
-                        <label for="name">First Name</label>
-                        {{ user_form.first_name }}
-                        <br>
-                    </div> 
-                
-                    <div class="form-field">
-                        <label for="name">Last Name</label>
-                        <!-- <input type="text" id="lname" name="lname"> -->
-                        {{ user_form.last_name }}
-                        <br>
-                    </div>
-                    <div class="form-field">
-                        <label for="name">Username</label>
-                        <!-- <input type="text" id="u-name" name="u-name"> -->
-                        {{ user_form.username }}
-                        <br>
-                    </div>
-                    <div class="form-field">
-                        <label for="email">Email</label>
-                        <!-- <input type="text" id="u-name" name="u-name"> -->
-                        {{ user_form.email }}
-                        <br>
-                    </div>
-                    <div class="form-field">
-                        <label for="name">Gender</label>
-                        <!-- <input type="text" id="gender" name="gender"> -->
-                        {{ profile_form.gender }}
-                        <br>
-                    </div>
-                    <div class="form-field">
-                        <label for="name">Country</label>
-                        <!-- <input type="text" id="country" name="country"> -->
-                        {{ profile_form.country }}
-                        <br>
-                    </div>
-                    <div class="form-field avatar-field" id="change_img">
-                        <label for="name">Profile image</label>
-                        <!-- <input type="text" id="gender" name="gender"> -->
-                            {{ profile_form.avatar }}
-                        <br>
-                    </div>
-                    <button type="submit" class="change-btn">Save Changes</button>
-                </form>
-                <br> <br> <br>
-                <form action="" method="POST">
-                    <button  type="submit" class="change-btn"><a href="{% url 'password_change' %}">Change Password</a></button>
-                </form>
-            </div>
+  <!-- main code for profile page below -->
+  <main id="dash" class="profile-page-container">
+    {% if user_form.errors %}
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <div id="form_errors">
+        {% for key, value in user_form.errors.items %}
+        <strong>{{ value }}</strong>
+        {% endfor %}
+      </div>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %}
+    <div class="profile-wrapper">
+      <div class="side-profile profile-card">
+        <div class="profile-summary">
+          <div class="profile-img-container">
+            {% load static %}
+            <img
+              class="profile-img"
+              id="profile-img"
+              src="{{ user.profile.avatar.url }} "
+              alt="user profile image"
+            />
+          </div>
+          <p class="profile-name">{{ user.username }}</p>
+          <p class="profile-email">{{ user.email }}</p>
         </div>
-    </main>
+      </div>
+
+      <div class="profile-details profile-card">
+        <h2>Edit Profile</h2>
+        <form
+          method="post"
+          enctype="multipart/form-data"
+          class="profile_form account_form"
+        >
+          {% csrf_token %}
+          <div class="form-field">
+            <label for="name">First Name</label>
+            {{ user_form.first_name }}
+            <br />
+          </div>
+
+          <div class="form-field">
+            <label for="name">Last Name</label>
+            <!-- <input type="text" id="lname" name="lname"> -->
+            {{ user_form.last_name }}
+            <br />
+          </div>
+          <div class="form-field">
+            <label for="name">Username</label>
+            <!-- <input type="text" id="u-name" name="u-name"> -->
+            {{ user_form.username }}
+            <br />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <!-- <input type="text" id="u-name" name="u-name"> -->
+            {{ user_form.email }}
+            <br />
+          </div>
+          <div class="form-field">
+            <label for="name">Gender</label>
+            <!-- <input type="text" id="gender" name="gender"> -->
+            {{ profile_form.gender }}
+            <br />
+          </div>
+          <div class="form-field">
+            <label for="name">Country</label>
+            <!-- <input type="text" id="country" name="country"> -->
+            {{ profile_form.country }}
+            <br />
+          </div>
+          <div class="form-field avatar-field" id="change_img">
+            <label for="name">Profile image</label>
+            <!-- <input type="text" id="gender" name="gender"> -->
+            {{ profile_form.avatar }}
+            <br />
+          </div>
+          <button type="submit" class="change-btn">Save Changes</button>
+        </form>
+        <!-- <br />
+        <br />
+        <br />
+        <form action="" method="POST">
+          <button type="submit" class="change-btn">
+            <a href="{% url 'password_change' %}">Change Password</a>
+          </button>
+        </form> -->
+      </div>
+    </div>
+  </main>
 </div>
 
 {% endblock content %}

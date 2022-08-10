@@ -7,22 +7,27 @@
     </div>
     <div>
       <nav class="navybar">
-        <a href="#">Workspace</a>
-        <a href="#">My Projects</a>
-        <a href="#">Community</a>
+        <a href="{% url 'project' %}">My Projects</a>
+        <a href="{% url 'community' %}" target="_blank">Community</a>
         <!-- profile -->
         <div class="dropdown">
           <button class="dropbtn" onclick="myFunction()">
-            {% load static %} <img src={% static "images/profile.svg" %}
-            alt="profile image">
-            <i class="fa fa-caret-down"></i>
+            {% load static %}
+            <img
+              src="{{ user.profile.avatar.url }} "
+              alt="user profile image"
+              class="propic"
+            />
+            <i class="fa fa-caret-down" onclick="myFunction()"></i>
           </button>
           <div class="dropdown-content" id="myDropdown">
-            <p><small>username</small></p>
-            <p><small>email</small></p>
-            <a href="#">Edit Profile</a>
-            <a href="#">Change Password</a>
-            <a href="#">Log out</a>
+            <p>
+              <small>{{ user.username }}</small><br />
+              <small>{{ user.email }}</small>
+            </p>
+            <a href="{% url 'profile' %}">Edit Profile</a>
+            <a href="{% url 'password_change' %}">Change Password</a>
+            <a href="{% url 'logout' %}">Log out</a>
           </div>
         </div>
       </nav>
@@ -30,10 +35,10 @@
   </header>
 
   <!-- after the navbar -->
-  <main>
+  <main id="dash">
     <!-- new side bar -->
 
-    <div class="sideynav">
+    <!-- <div class="sideynav">
       <a href="#">Highlight</a>
       <a href="#">Clean</a>
       <a href="#">Compare</a>
@@ -41,10 +46,8 @@
       <a href="#">Save Project</a>
       <a href="#">Showcase</a>
       <a href="#">Download</a>
-    </div>
-    <div class="page-content">
-		
-	</div>
+    </div> -->
+    <div class="page-content"></div>
   </main>
 </div>
 {% endblock content %}

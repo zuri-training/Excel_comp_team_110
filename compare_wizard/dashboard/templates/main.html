@@ -7,22 +7,25 @@
     </div>
     <div>
       <nav class="navybar">
-        <a href="#">Workspace</a>
-        <a href="#">My Projects</a>
-        <a href="#">Community</a>
+        <a href="{% url 'project' %}">My Projects</a>
+        <a href="{% url 'community' %}" target="_blank">Community</a>
         <!-- profile -->
         <div class="dropdown">
           <button class="dropbtn" onclick="myFunction()">
-            {% load static %} <img src={% static "images/profile.svg" %}
-            alt="profile image">
-            <i class="fa fa-caret-down"></i>
+            {% load static %}
+            <img
+              src="{{ user.profile.avatar.url }} "
+              alt="user profile image"
+              class="propic"
+            />
+            <i class="fa fa-caret-down" onclick="myFunction()"></i>
           </button>
           <div class="dropdown-content" id="myDropdown">
-            <p><small>username</small></p>
-            <p><small>email</small></p>
-            <a href="#">Edit Profile</a>
-            <a href="#">Change Password</a>
-            <a href="#">Log out</a>
+            <p><small>{{ user.username }}</small></p>
+            <p><small>{{ user.email }}</small></p>
+            <a href="{% url 'profile' %}">Edit Profile</a>
+            <a href="{% url 'password_change' %}">Change Password</a>
+            <a href="{% url 'logout' %}">Log out</a>
           </div>
         </div>
       </nav>
@@ -86,23 +89,6 @@
 </div>
 
 <!-- dashboard JS -->
-<script>
-  /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-  function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function (e) {
-    if (!e.target.matches(".dropbtn")) {
-      var myDropdown = document.getElementById("myDropdown");
-      if (myDropdown.classList.contains("show")) {
-        myDropdown.classList.remove("show");
-      }
-    }
-  };
-</script>
 
 // uploading
 <script>
@@ -198,8 +184,6 @@
     };
 
     //   Hightlight duplicates
-    
   });
-
 </script>
 {% endblock content %}

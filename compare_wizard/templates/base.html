@@ -25,7 +25,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     />
-   
+
     <!-- Jquery -->
     <!-- <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -33,7 +33,7 @@
   crossorigin="anonymous"></script> -->
 
     <!-- 	Adding IP api -->
-    <script>
+    <!-- <script>
       !(function () {
         const e = document.documentElement;
         if (
@@ -65,11 +65,11 @@
             });
         }
       })();
-    </script>
+    </script> -->
     <script
-    type="text/javascript"
-    src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"
-  ></script>
+      type="text/javascript"
+      src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"
+    ></script>
   </head>
   <body class="is-boxed has-animations">
     {% if messages %} {% for message in messages%}
@@ -88,5 +88,26 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+    <script>
+      /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+
+      const dropdown = document.querySelector(".dropbtn");
+
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      dropdown.addEventListener("click", function (e) {
+        if (!e.target.matches(".dropbtn")) {
+          var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains("show")) {
+            myDropdown.classList.remove("show");
+          }
+        }
+      });
+    </script>
   </body>
 </html>

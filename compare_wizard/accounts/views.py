@@ -20,7 +20,7 @@ def login_user(request):
             login(request, user)
             # Redirect to a success page.
             # return redirect("dashboard:workspace.html")
-            return redirect('profile')
+            return redirect('project')
         else:
             # Return an 'invalid login' error message.
             messages.success(request, ("Incorrect Password, try again"))
