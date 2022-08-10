@@ -159,6 +159,10 @@ small a:hover {
   font-weight: bold;
 }
 
+.login-container div form ul {
+  display: none;
+}
+
 .login-container div form input {
   display: block;
   appearance: none;
@@ -188,6 +192,25 @@ small a:hover {
 }
 
 .login-container div form input[type="submit"]:hover {
+  background-color: #001e45;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.login-container div form button[type="submit"] {
+  padding: 15px 25px;
+  background-color: #023e8a;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  /* height: 56px; */
+  border-radius: 5px;
+  margin: 5px 0px;
+  display: block;
+}
+
+.login-container div form button[type="submit"]:hover {
   background-color: #001e45;
   color: #ffffff;
   text-decoration: none;
