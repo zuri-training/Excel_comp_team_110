@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
 }
+/*  */
 .workspace header {
   display: flex;
   justify-content: space-between;
@@ -132,6 +133,10 @@ main .page-content {
   flex-direction: column;
 }
 
+#dash{
+  background-color: #ffffff;
+}
+
 .page-content .uploads {
   display: flex;
   justify-content: space-around;
@@ -144,7 +149,6 @@ main .page-content {
 .workbox {
   display: grid;
   place-items: center;
-  background: #ccd8e8;
   margin: 25px auto;
   padding: 15px;
   border: 3px dotted #023e8a;

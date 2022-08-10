@@ -1,133 +1,50 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container">
-	<header>
-		<nav>
-			<div class="logo">
-				{% load static %} <img src={% static "images/logo.svg" %} alt="logo">
-			</div>
+<div class="workspace">
+  <header>
+    <div>
+      {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+    </div>
+    <div>
+      <nav class="navybar">
+        <a href="#">Workspace</a>
+        <a href="#">My Projects</a>
+        <a href="#">Community</a>
+        <!-- profile -->
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">
+            {% load static %} <img src={% static "images/profile.svg" %}
+            alt="profile image">
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <p><small>username</small></p>
+            <p><small>email</small></p>
+            <a href="#">Edit Profile</a>
+            <a href="#">Change Password</a>
+            <a href="#">Log out</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-			<div class="other-icons">
-				<div class="dropdown">
-					<button class="dropbtn">Compare ▼</button>
+  <!-- after the navbar -->
+  <main>
+    <!-- new side bar -->
 
-					<div class="dropdown-content">
-						<a href="#">Compare</a>
-						<a href="#">Compare & fix</a>
-						<a href="#">Compare, fix & merge</a>
-					</div>
-				</div>
-
-				<button class="btn-2">Analyse</button>
-
-				<p>Hi! <span>Wanten</span></p>
-
-				{% load static %} <img src={% static "images/profile.svg" %}
-				alt="profile-image" />
-			</div>
-		</nav>
-	</header>
-
-	<main>
-		<!-- Side navigation -->
-		<div class="sidenav">
-			<a href="{% url 'workspace' %}">Workspace</a>
-			<a href="{% url 'project' %}">Projects</a>
-			<a href="{% url 'community' %}">Community</a>
-		</div>
-
-		<!-- Page content -->
-		<div class="content-container">
-			<div id="home"><a href="{% url 'home' %}">Home</a></div>
-
-			<!-- <section class="container"> -->
-			<div class="recent-icon">
-				{% load static %} <img src={% static "images/recents.png" %}
-				alt="recent-icon" />
-				<h3>Recents</h3>
-			</div>
-			<!-- </section> -->
-
-			<section class="flex-container">
-				<div class="row">
-					<h4>Today</h4>
-
-					{% load static %} <img src={% static "images/single.png" %}
-					class="min-image" alt="single" /> 
-                    
-                    {% load static %} <img src={% static "images/double.png" %} 
-                    class="min-image" alt="double" />
-				</div>
-
-				<div class="row">
-					<h4>Yesterday</h4>
-
-					{% load static %} <img src={% static "images/pdf.png" %}
-					class="min-image" alt="pdf" /> 
-                    
-                    {% load static %} <img src={% static "images/single.png" %} 
-                    class="min-image" alt="single" />
-				</div>
-
-				<div class="row">
-					<h4>This Week</h4>
-
-					{% load static %} <img src={% static "images/double.png" %}
-					class="min-image" alt="double" /> 
-                    
-                    {% load static %} <img src={% static "images/pdf.png" %}
-                     class="min-image" alt="pdf" />
-				</div>
-			</section>
-
-			<!-- <div class="community-icon">
-            <div class="community-title">
-              <img src="./icons/community.png" alt="community-icon" />
-              <h3>Community</h3>
-            </div>
-            <p>
-              Explore over 500+ data analyses all by<br />
-              our real life community members.
-            </p>
-          </div> -->
-
-			<section>
-				<h3>New</h3>
-
-				<div class="new-container">
-					<div class="flex-column">
-						{% load static %} <img src={% static "images/sheet.png" %}
-						class="min-image" alt="sheet-icon" />
-						<a href="#">New Sheet</a>
-					</div>
-
-					<div class="flex-column">
-						{% load static %} <img src={% static "images/sheet.png" %}
-						alt="workbook-icon" class="min-image" />
-						<a href="#">New Workbook</a>
-					</div>
-				</div>
-			</section>
-
-			<section>
-				<h3 id="saved">Saved Documents</h3>
-
-				<div class="saved-container">
-					<div class="flex-column">
-						{% load static %} <img src={% static "images/compared.png" %}
-						alt="compare-icon" class="min-image" />
-						<a href="#">Compared File</a>
-					</div>
-
-					<div class="flex-column">
-						{% load static %} <img src={% static "images/merged.png" %}
-						alt="merged-icon" class="min-image" />
-						<a href="#">Merged File</a>
-					</div>
-				</div>
-			</section>
-		</div>
-	</main>
+    <div class="sideynav">
+      <a href="#">Highlight</a>
+      <a href="#">Clean</a>
+      <a href="#">Compare</a>
+      <a href="#">Merge</a>
+      <a href="#">Save Project</a>
+      <a href="#">Showcase</a>
+      <a href="#">Download</a>
+    </div>
+    <div class="page-content">
+		
+	</div>
+  </main>
 </div>
-
 {% endblock content %}
