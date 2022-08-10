@@ -114,7 +114,7 @@ small a:hover {
 
 /* password reset form styles */
 
-.login-container div {
+.login-container div.pass {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,28 +123,28 @@ small a:hover {
   text-align: center;
 }
 
-.login-container div img {
+.login-container div.pass img {
   width: 100px;
   margin-bottom: 60px;
 }
 
-.login-container div h2 {
+.login-container div.pass h2 {
   color: #023e8a;
   padding-bottom: 20px;
   font-size: 30px;
 }
 
-.login-container div p {
+.login-container div.pass p {
   font-weight: bold;
   font-size: 18px;
 }
 
-.login-container div hr {
+.login-container div.pass hr {
   width: 60vw;
   border: 2px solid #023e8a;
   margin: 10px 0px;
 }
-.login-container div form {
+.login-container div.pass form {
   margin: 10px 0px;
   padding: 30px 0px;
   font-size: 14px;
@@ -154,16 +154,16 @@ small a:hover {
   color: #023e8a;
 }
 
-.login-container div form p label {
+.login-container div.pass form p label {
   font-size: 20px;
   font-weight: bold;
 }
 
-.login-container div form ul {
+.login-container div.pass form ul {
   display: none;
 }
 
-.login-container div form input {
+.login-container div.pass form input {
   display: block;
   appearance: none;
   outline: 0;
@@ -178,7 +178,7 @@ small a:hover {
   width: 50vw;
 }
 
-.login-container div form input[type="submit"] {
+.login-container div.pass form input[type="submit"] {
   padding: 15px 25px;
   background-color: #023e8a;
   border: none;
@@ -191,13 +191,13 @@ small a:hover {
   display: block;
 }
 
-.login-container div form input[type="submit"]:hover {
+.login-container div.pass form input[type="submit"]:hover {
   background-color: #001e45;
   color: #ffffff;
   text-decoration: none;
 }
 
-.login-container div form button[type="submit"] {
+.login-container div.pass form button[type="submit"] {
   padding: 15px 25px;
   background-color: #023e8a;
   border: none;
@@ -210,7 +210,7 @@ small a:hover {
   display: block;
 }
 
-.login-container div form button[type="submit"]:hover {
+.login-container div.pass form button[type="submit"]:hover {
   background-color: #001e45;
   color: #ffffff;
   text-decoration: none;
