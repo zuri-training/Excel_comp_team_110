@@ -143,6 +143,7 @@ small a:hover {
   width: 60vw;
   border: 2px solid #023e8a;
   margin: 10px 0px;
+  background-color: #023e8a;
 }
 .login-container div.pass form {
   margin: 10px 0px;
