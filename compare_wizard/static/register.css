@@ -32,12 +32,13 @@
 }
 
 .login-container .register-left {
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   /* align-self: center; */
-  margin-left: 100px;
+  margin-left: 70px;
+  margin-right: 40px;
   /* padding: 0px 50px; */
   flex-wrap: wrap;
   /* box-shadow: 0px 0px 5px 3px rgba(2, 62, 138, 0.3);
@@ -45,7 +46,7 @@
   -moz-box-shadow: 0px 0px 5px 3px rgba(2, 62, 138, 0.3); */
   background-color: #ccd8e8;
   width: 40vw;
-  height: 90vh;
+  height: 80vh;
 }
 
 /* .register-right-top {
