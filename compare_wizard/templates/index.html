@@ -403,9 +403,13 @@
     <nav class="navbar">
       <ul class="header-links list-reset m-0">
         <li>
-          <a href="#">Home</a>
+          <a href="{% url 'home' %}">Home</a>
         </li>
         {% if user.is_authenticated %}
+          
+          <li>
+            <a href="{% url 'community' %}">Community</a>
+          </li>
           <li>
             <a href="{% url 'logout' %}">Logout</a>
           </li>
@@ -437,7 +441,7 @@
           at the tap of a simple button
         </p>
 
-        <div><a class="button" href="#">Get started</a></div>
+        <div><a class="button" href="{% url 'register' %}">Get started</a></div>
       </div>
 
       <div class="hero-right">
@@ -636,19 +640,19 @@
     <div class="footer-center">
         <ul class="footer-links">
           <li>
-            <a href="#">Home</a>
+            <a href="{% url 'home' %}">Home</a>
           </li>
           <li>
-            <a href="#">Community</a>
+            <a href="{% url 'community' %}">Community</a>
           </li>
           
             
             <div>
             <li>
-              <a href="#">Sign up</a>
+              <a href="{% url 'register' %}">Sign up</a>
             </li>
             <li>
-              <a href="#">Login</a>
+              <a href="{% url 'login' %}">Login</a>
             </li>
           </div>
         

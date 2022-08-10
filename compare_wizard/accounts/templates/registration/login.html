@@ -10,7 +10,7 @@
     <form action="" method="POST">
       {% csrf_token %}
 
-      <div class="mb-3">->
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label"
           >Username or Email</label
         >
@@ -30,7 +30,7 @@
       <div class="form-floating mb-3">
         <button type="submit" class="btn btn-primary">Log in</button>
       </div>
-      <small class="dontHave">Don’t have an account? <a href="#">Sign up</a></small>
+      <small class="dontHave">Don’t have an account? <a href="{% url 'register' %}">Sign up</a></small>
 
       <!-- <input type="submit" value="submit" class="btn btn-secondary"> -->
     </form>

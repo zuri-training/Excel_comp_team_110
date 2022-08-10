@@ -7,5 +7,5 @@ def home(request):
 def login(request):
   return render(request, 'accounts/login.html')
 
-# def dashboard(request):
-#   return render(request, 'dashboard/index.html')
+def community(request):
+  return render(request, 'community.html')

@@ -7,8 +7,16 @@ main.login-container {
   /* font-family: "Open Sans", sans-serif; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
   overflow: hidden;
-  padding: 0px 150px;
+  padding: 30px 150px;
+}
+
+.login-container .right {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .login-container .left {
@@ -83,22 +91,104 @@ main.login-container {
   text-decoration: none;
 }
 
-.login-container .left form .dontHave {
+.dontHave {
   text-decoration: none;
   color: #535353;
   text-align: center;
   display: block;
 }
 
-.login-container .left form .dontHave a {
+.dontHave a {
   text-decoration: none;
   color: #023e8a;
 }
 
-.login-container .left form small a:hover {
+small a:hover {
   text-decoration: underline;
 }
 
 .right img {
-  height: 100vh;
+  width: 50vw;
+  padding: 20px 50px;
+}
+
+/* password reset form styles */
+
+.login-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  text-align: center;
+}
+
+.login-container div img {
+  width: 100px;
+  margin-bottom: 60px;
+}
+
+.login-container div h2 {
+  color: #023e8a;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+.login-container div p {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.login-container div hr {
+  width: 60vw;
+  border: 2px solid #023e8a;
+  margin: 10px 0px;
+}
+.login-container div form {
+  margin: 10px 0px;
+  padding: 30px 0px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #023e8a;
+}
+
+.login-container div form p label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.login-container div form input {
+  display: block;
+  appearance: none;
+  outline: 0;
+  border: 1px solid #023e8a;
+  color: #000;
+  background: #ccd8e8;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  width: 50vw;
+}
+
+.login-container div form input[type="submit"] {
+  padding: 15px 25px;
+  background-color: #023e8a;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  /* height: 56px; */
+  border-radius: 5px;
+  margin: 5px 0px;
+  display: block;
+}
+
+.login-container div form input[type="submit"]:hover {
+  background-color: #001e45;
+  color: #ffffff;
+  text-decoration: none;
 }
