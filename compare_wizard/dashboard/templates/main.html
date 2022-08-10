@@ -37,13 +37,13 @@
     <!-- new side bar -->
 
     <div class="sideynav">
-      <a href="#">Highlight</a>
-      <a href="#">Clean</a>
+      <a href="#" id="high">Highlight</a>
+      <a href="#" id="rem">Remove</a>
       <a href="#">Compare</a>
       <a href="#">Merge</a>
       <a href="#">Save Project</a>
       <a href="#">Showcase</a>
-      <a href="#">Download</a>
+      <a href="#" id="down">Download</a>
     </div>
     <div class="page-content">
       <div class="uploads">
@@ -95,6 +95,8 @@
   const excel_file = document.getElementById("excel_file1");
   const excel_file2 = document.getElementById("excel_file2");
 
+  var reader = new FileReader();
+
   excel_file.addEventListener("change", (event) => {
     if (
       ![
@@ -108,7 +110,6 @@
       return false;
     }
 
-    var reader = new FileReader();
     reader.readAsArrayBuffer(event.target.files[0]);
     reader.onload = function (event) {
       var data = new Uint8Array(reader.result);
@@ -182,8 +183,104 @@
       }
       excel_file2.value = "";
     };
-
-    //   Hightlight duplicates
   });
+  //   Hightlight duplicates
+  const high = document.getElementById("high");
+
+  high.addEventListener("click", function (arr) {
+    var data = new Uint8Array(reader.result);
+
+    var work_book = XLSX.read(data, { type: "array" });
+
+    var sheet_name = work_book.SheetNames;
+
+    var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {
+      header: 1,
+    });
+
+    arr = sheet_data;
+    // newArr = arr.toString().split(",")
+    const tdCell = document.querySelectorAll("td");
+    let arrB = [];
+
+    // pushed value of innerText into an array
+    for (let item of tdCell) {
+      arrB.push(item.innerText);
+    }
+    // console.log(arrB);
+
+    // find the duplicates
+    const set = new Set(arrB);
+
+    const duplicates = arrB.filter((item) => {
+      if (set.has(item)) {
+        set.delete(item);
+      } else {
+        return item;
+      }
+    });
+
+    // console.log(duplicates)
+
+    // matching
+    for (let item of tdCell) {
+      for (i = 0; i < duplicates.length; i++) {
+        if (item.innerText === duplicates[i]) {
+          item.classList.add("addyellow");
+        }
+      }
+    }
+  });
+
+  // ends here
+
+  // removing starts here
+  const remov = document.getElementById("rem");
+
+  remov.addEventListener("click", function (arr) {
+    var data = new Uint8Array(reader.result);
+
+    var work_book = XLSX.read(data, { type: "array" });
+
+    var sheet_name = work_book.SheetNames;
+
+    var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {
+      header: 1,
+    });
+
+    arr = sheet_data;
+    // newArr = arr.toString().split(",")
+    const tdCell = document.querySelectorAll("td");
+    let arrB = [];
+
+    // pushed value of innerText into an array
+    for (let item of tdCell) {
+      arrB.push(item.innerText);
+    }
+    // console.log(arrB);
+
+    // find the duplicates
+    const set = new Set(arrB);
+
+    const duplicates = arrB.filter((item) => {
+      if (set.has(item)) {
+        set.delete(item);
+      } else {
+        return item;
+      }
+    });
+
+    for (let item of tdCell) {
+      item.classList.remove("addyellow");
+      for (i = 0; i < duplicates.length; i++) {
+        if (item.innerText === duplicates[i]) {
+          item.parentElement.remove();
+          duplicates.splice(i, 1);
+        }
+      }
+    }
+  });
+
+  // Downloading
 </script>
 {% endblock content %}

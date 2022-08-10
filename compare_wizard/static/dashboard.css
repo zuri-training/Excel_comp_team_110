@@ -181,6 +181,10 @@ main .page-content {
 .uploads img {
   transform: rotate(180deg);
 }
+
+.addyellow {
+  background: yellow;
+}
 /* 
 .btn {
   color: #ffffff;
