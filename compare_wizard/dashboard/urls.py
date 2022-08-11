@@ -6,6 +6,6 @@ urlpatterns = [
     # path('workspace', views.workspace, name="workspace"),
     # path('community', views.community, name="community"),
     path('project', views.project, name="project"),
-    path('new_project/use_arg/', new_project, name='new_project'),
+    path('new_project', new_project, name='new_project'),
     path('', views.dashboard, name="dashboard"),
 ]
