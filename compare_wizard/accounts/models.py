@@ -4,10 +4,10 @@ from PIL import Image
 from django_countries.fields import CountryField
 
 GENDER_CHOICES = (
-    ('prefer not to say', 'PREFER NOT TO SAY'),
-    ('female', 'FEMALE'),
-    ('others', 'OTHERS'),
-    ('male', 'MALE'),
+    ('prefer not to say', 'Prefer not to say'),
+    ('female', 'Female'),
+    ('others', 'Others'),
+    ('male', 'Male'),
 )
 # Create your models here.
 class Profile(models.Model):

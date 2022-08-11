@@ -16,12 +16,12 @@
     {% load static %} <img src={% static "images/login_logo.png" %} alt="login
     logo">
 
-    <h1>Sign Up Here</h1>
+    <h1>Sign Up</h1>
     <form action="{% url 'register' %}" method="POST">
       {% csrf_token %} {{ form.as_p }}
 
       <div class="form-floating mb-3">
-        <button type="submit" class="btn btn-primary">Sign up</button>
+        <button type="submit" class="btn btn-primary">Create account</button>
       </div>
       <small class="dontHave">Already have an account? <a href="{% url 'login' %}">Login</a></small>
       <!-- <input type="submit" value="submit" class="btn btn-secondary"> -->
@@ -38,7 +38,7 @@
     {% load static %} <img src={% static "images/register.png" %} alt="register
     page image" class="image">
 
-    <p>Sign up to Compare wizard to enjoy</p>
+    <p>Sign up on Compare wizard to enjoy</p>
     {% load static %} <img src={% static "images/howitworks.png" %} alt="hiw
     infograph" class="infograph">
   </div>
