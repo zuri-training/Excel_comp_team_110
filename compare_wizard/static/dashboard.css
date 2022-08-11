@@ -121,8 +121,8 @@
 .sideynav {
   height: 85%; /* Full-height: remove this if you want "auto" height */
   width: 15%; /* Set the width of the sidebar */
-  position: fixed; /*Fixed Sidebar (stay in place on scroll)*/
-  top: 15; /* Stay at the top */
+  position: absolute; /*Fixed Sidebar (stay in place on scroll)*/
+  top: 40px; /* Stay at the top */
   left: 0;
   background-color: #023e8a;
   overflow-x: hidden; /* Disable horizontal scroll */
