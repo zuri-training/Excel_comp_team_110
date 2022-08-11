@@ -33,8 +33,8 @@ def new_project(request):
     instance = Project.objects.create(user = user, project_name = title, status=status)
     instance.save()
 
-    instances = Project.objects.all().filter(user = user)
+    # instances = Project.objects.all().filter(user = user)
     
-    context = {'wanten': instances}
+    # context = {'wanten': instances}
 
-  return render(request, 'project.html', context)# redirect
+  return render(request, 'main.html')# redirect
