@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Error Message</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="error-container">
+            <div class="close-btn" onclick="this.parentElement.style.display='none';">
+                    <img class="close-icon" src="/icons/icons8-close-16.svg" alt="close window icon">
+            </div>
+            <div class="error-message">
+                <div class="error-msg">
+                    <img src="/icons/icons8-close.svg" alt="">
+                    <h2>Oops!</h2>
+                    <p>Sorry, file unable to download due to error...</p>
+                </div>
+                <div class="error-return">
+                    <button class="error-btn"><a href="#">Return to homepage</a></button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
