@@ -10,7 +10,11 @@ from .models import Project
 #   return render(request, 'community.html')
 
 def project(request):
-  return render(request, 'project.html')
+  user = User.objects.get(id = request.user.id)
+  instances = Project.objects.all().filter(user = user)
+    
+  context = {'wanten': instances}
+  return render(request, 'project.html', context)
 
 def dashboard(request):
   return render(request, 'main.html')
