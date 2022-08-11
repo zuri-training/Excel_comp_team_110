@@ -285,9 +285,11 @@
         if (item.innerText === duplicates[i]) {
           item.parentElement.remove();
           duplicates.splice(i, 1);
+          console.log(duplicates.splice(i, 1))
         }
       }
     }
+   
   });
 
   // Downloading

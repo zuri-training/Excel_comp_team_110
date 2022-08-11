@@ -118,14 +118,21 @@
     border: 0px;
     border-radius: 2px;
     margin-right: 15px;
-"><a href="#">LOAD</a> </button>
+"><a href="{% url 'down_fxn' pj_id=i.id %}"style="
+text-decoration: none;
+color: inherit;
+">DOWNLOAD</a> </button>
 <button style="
     float: right;
     padding: 3px;
     border: 0px;
     border-radius: 2px;
     margin-right: 15px;
-"> DELETE </button></li>
+"> <a href="{% url 'del_fxn' pj_id=i.id %}" 
+  style="
+  text-decoration: none;
+  color: inherit;
+"> DELETE </a></button></li>
         {% endfor %}
       </ul>
     {% else %}

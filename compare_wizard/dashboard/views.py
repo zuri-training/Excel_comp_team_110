@@ -38,3 +38,17 @@ def new_project(request):
     # context = {'wanten': instances}
 
   return render(request, 'main.html')# redirect
+
+
+def del_fxn(request, pj_id):
+  instance = Project.objects.get(id=pj_id)
+  instance.delete()
+
+  return redirect(project)
+
+
+def down_fxn(request, pj_id):
+  instance = Project.objects.get(id=pj_id)
+  
+  return instance.file.url
+  
