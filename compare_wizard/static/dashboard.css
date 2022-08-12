@@ -15,7 +15,7 @@
   height: max-content;
   width: 100vw;
   /* overflow: hidden; */
-  padding: 13.5px 20px 6.5px 50px;
+  padding: 13.5px 20px 7.5px 50px;
   position: fixed;
   top: 0;
   z-index: 1;
@@ -74,7 +74,7 @@
 
 .navybar a:hover,
 .dropbtn:focus {
-  background-color: #fbfbfb;
+  background-color: #f9fbff;
   color: #023e8a;
   border-radius: 10px;
 }
@@ -82,7 +82,6 @@
 .dropdown:hover .dropbtn {
   background-color: #f9fbff;
   color: #023e8a;
-  border-radius: 25%;
 }
 
 .navybar .propic {
@@ -102,26 +101,33 @@
   right: 0px;
   top: 14;
   background-color: #023e8a;
-  width: 250px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  width: max-content;
+  box-shadow: 0px 8px 16px 0px hsla(0, 0%, 0%, 0.2);
   z-index: 1;
   text-align: center;
-  padding: 20px 5px;
+  padding: 25px 10px 15px;
+  border-radius: 5px;
 }
 
 .dropdown-content a {
   float: none;
-  color: #023e8a;
+  color: #f9fbff;
   padding: 5px 10px;
   text-decoration: none;
   display: block;
   text-align: center;
-  margin: 10px 0px;
+  margin: 5px 0px;
   font-size: 12px;
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
+/* .dropdown-content a:nth-of-type(1) {
+  ;
+  padding-top: 15px;
+} */
+
+.dropdown-content p:nth-of-type(2) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d4d4d4
 }
 
 .dropdown-content p {
@@ -143,7 +149,7 @@
 /* sidenav starts */
 /* The sidebar menu */
 .sideynav {
-  height: 85%; /* Full-height: remove this if you want "auto" height */
+  height: 86.5%; /* Full-height: remove this if you want "auto" height */
   width: max-content; /* Set the width of the sidebar */
   position: absolute; /*Fixed Sidebar (stay in place on scroll)*/
   /* top: 150px; Stay at the top */
