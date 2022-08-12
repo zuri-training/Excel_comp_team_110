@@ -9,7 +9,10 @@ urlpatterns = [
     path('new_project', new_project, name='new_project'),
     path('', views.dashboard, name="dashboard"),
     path('del_fxn/?P<int:pj_id>', del_fxn, name='del_fxn'),
-    path('down_fxn/?P<int:pj_id>', down_fxn, name='down_fxn')
+    path('down_fxn/?P<int:pj_id>', down_fxn, name='down_fxn'),
+
+    # path('save1/', views.save1, name="save1"), #?P<str:title>
+    # path('save2', views.save2, name="save2"),
 
 ]
 
