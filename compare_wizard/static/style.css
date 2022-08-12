@@ -194,7 +194,24 @@ section {
   color: #000000;
   margin: 25px 0px;
 }
+ /* how t0 use stylling starts here */
+ section.section-how .how-to {
+  padding: 50px 150px;
+ }
 
+ section.section-how .how-to h2 {
+  padding-bottom: 15px;
+  font-size: 40px;
+ }
+
+ section.section-how .how-to h2 span {
+  color: #023e8a;
+ }
+
+ section.section-how .how-to li {
+  line-height: 24px;
+  padding-bottom: 16px;
+ }
 /* testimony styling starts here */
 .testimony {
   display: flex;
