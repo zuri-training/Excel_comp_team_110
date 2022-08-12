@@ -250,7 +250,9 @@
   // removing starts here
   const remov = document.getElementById("rem");
 
-  remov.addEventListener("click", function (arr) {
+  remov.addEventListener("click", removeDuplicate());
+  
+  function removeDuplicate() {
     var data = new Uint8Array(reader.result);
 
     var work_book = XLSX.read(data, { type: "array" });
@@ -260,6 +262,7 @@
     var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {
       header: 1,
     });
+    let arr = [];
 
     arr = sheet_data;
     // newArr = arr.toString().split(",")
@@ -292,10 +295,17 @@
         }
       }
     }
-   const newFileTable = document.querySelector('table')
-   console.log(newFileTable)
-  });
 
+  // function reTable(){
+  //  const newFileTable = document.querySelector('table')
+  //  console.log(newFileTable)
+
+  //  return newFileTable
+  // }
+
+  };
+ 
   // Downloading
+  // {% comment %} console.log(reTable()) {% endcomment %}
 </script>
 {% endblock content %}
