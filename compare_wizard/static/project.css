@@ -90,6 +90,11 @@ nav {
 .dropdown:hover .dropbtn {
 	background-color: #f1f1f1;
 }
+ /* demarcate user details from links on dropdown */
+.dropdown-content#myDropdown p {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #d4d4d4;
+  }
 
 /* analyse button style */
 .btn-2 {
