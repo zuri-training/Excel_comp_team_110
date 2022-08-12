@@ -2,9 +2,20 @@
 
 <div class="workspace">
   <header>
-    <div>
+    <div class="workspace-logo">
       {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
     </div>
+    <!-- <div class="search-bar">
+      {% load static %} <img src={% static "images/icons8-search.svg" %} alt="search-icon">
+      <form method="" action="" id="">
+        <input
+          id="search"
+          name="search"
+          type="text"
+          placeholder="Search..."
+        />
+      </form>
+    </div> -->
     <div>
       <nav class="navybar">
         <a href="{% url 'project' %}">My Projects</a>
@@ -42,8 +53,6 @@
       <a href="#">Compare</a>
       <a href="#">Merge</a>
       <a href="#">Save Project</a>
-      <a href="#">Showcase</a>
-      <a href="#" id="down">Download</a>
     </div>
     <div class="page-content">
       <div class="uploads">
@@ -53,7 +62,7 @@
           alt="upload-icon"/>
           <div>
             <h4>File 1: Upload files/Paste URL</h4>
-            <input type="file" id="excel_file1" />
+            <input type="file" id="excel_file1" name='excel_file1'/>
           </div>
         </div>
         <!-- second file -->
@@ -61,8 +70,8 @@
           {% load static %} <img src={% static "images/upload.svg" %}
           alt="upload-icon"/>
           <div>
-            <h4>File 1: Upload files/Paste URL</h4>
-            <input type="file" id="excel_file2" />
+            <h4>File 2: Upload files/Paste URL</h4>
+            <input type="file" id="excel_file2" name='excel_file1'/>
           </div>
         </div>
       </div>
@@ -276,9 +285,11 @@
         if (item.innerText === duplicates[i]) {
           item.parentElement.remove();
           duplicates.splice(i, 1);
+          console.log(duplicates.splice(i, 1))
         }
       }
     }
+   
   });
 
   // Downloading

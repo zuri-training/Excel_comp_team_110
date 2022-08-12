@@ -10,7 +10,11 @@ from .models import Project
 #   return render(request, 'community.html')
 
 def project(request):
-  return render(request, 'project.html')
+  user = User.objects.get(id = request.user.id)
+  instances = Project.objects.all().filter(user = user)
+    
+  context = {'wanten': instances}
+  return render(request, 'project.html', context)
 
 def dashboard(request):
   return render(request, 'main.html')
@@ -29,8 +33,22 @@ def new_project(request):
     instance = Project.objects.create(user = user, project_name = title, status=status)
     instance.save()
 
-    instances = Project.objects.all().filter(user = user)
+    # instances = Project.objects.all().filter(user = user)
     
-    context = {'wanten': instances}
+    # context = {'wanten': instances}
 
-  return render(request, 'project.html', context)# redirect
+  return render(request, 'main.html')# redirect
+
+
+def del_fxn(request, pj_id):
+  instance = Project.objects.get(id=pj_id)
+  instance.delete()
+
+  return redirect(project)
+
+
+def down_fxn(request, pj_id):
+  instance = Project.objects.get(id=pj_id)
+  
+  return instance.file.url
+  

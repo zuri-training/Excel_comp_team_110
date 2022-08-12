@@ -5,6 +5,17 @@
     <div>
       {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
     </div>
+    <!-- <div class="search-bar">
+      {% load static %} <img src={% static "images/icons8-search.svg" %} alt="search-icon">
+      <form method="" action="" id="">
+        <input
+          id="search"
+          name="search"
+          type="text"
+          placeholder="Search..."
+        />
+      </form>
+    </div> -->
     <div>
       <nav class="navybar">
         <a href="{% url 'project' %}">My Projects</a>
@@ -39,30 +50,96 @@
     {% comment %} style="margin: 12% auto">
     <a href="{% url 'dashboard' %}"><button>Start Project</button></a> {% endcomment %}
     <!-- new side bar -->
-    <div>
-      <form action="{% url 'new_project' %}" method="post" enctype="multipart/form-data" id="p-form">
+    <div class='main-1' style="display: block;box-sizing: border-box;margin-bottom: 150px;">
+      <form action="{% url 'new_project' %}" method="post" enctype="multipart/form-data" id="p-form" style="
+      margin-top: 10px;
+      background-color: rgba(156, 200, 236, 0.559);
+      padding: 15px;
+  ">
           {% csrf_token %}
-          <div>
-              <label for="title">Project Name</label>
-              <input type="text" name="title" id="title" placeholder="new project">
+          <div style="
+          height: 50px;
+          display: flex;
+          justify-content: space-evenly;
+          /* align-items: center; */
+      ">
+              <label for="title" style="align-self: center;color: darkblue;">Project Name</label>
+              <input type="text" name="title" id="title" placeholder="new project" style="
+              border: none;
+              border-bottom: 2px solid gray;
+              padding: 5px;
+              width: 30%;
+              background: transparent;
+          ">
           </div>
-          <div>
+          <div style="
+          margin: 45px 10px 0px 30px;
+          font-weight: bold;
+      ">
               <input type="checkbox" name="status" id="status" checked>
               <label for="status">Visibility</label>
           </div>
 
-          <input type="submit">
-
-          <p>Note Visibility checked means that the project will be public ***</p>
+          <input type="submit" value="CREATE" style="
+          /* background-color: #023e8a; */
+          width: 100px;
+          height: 35px;
+          padding: 3px;
+          /* color: white; */
+          border: 2px  skyblue;
+          border-radius: 10px;
+          float: right;
+          margin-right: 20px;
+      ">
+          <p style="
+          color: red;
+          font-size: 12px;
+          display: block;
+          text-align: center;
+          margin: 23px;
+      ">Note Visibility checked means that the project will be public ***</p>
       </form>
   </div>
-  <div>
+  <h2 style="
+  text-align: center;
+"> MY PROJECTS</h2><hr style="margin-top: 24px;"/>
+  <div class='main-2'>
+    {% if wanten %}
       <ul>
         {% for i in wanten %}
-        <li>{{ i.project_name }}, ____ {{ i.date_created }}, ___{{i.last_modified}}</li>
+        <li style="
+        display: block;
+        margin: 15PX;
+        padding: 15px;
+        box-shadow: 3px 5px 2px whitesmoke;
+    ">{{ i.project_name }} | {{ i.date_created }} | {{i.last_modified}} | {{i.status}}<button style="
+    float: right;
+    padding: 3px;
+    border: 0px;
+    border-radius: 2px;
+    margin-right: 15px;
+"><a href="{% url 'down_fxn' pj_id=i.id %}"style="
+text-decoration: none;
+color: inherit;
+">DOWNLOAD</a> </button>
+<button style="
+    float: right;
+    padding: 3px;
+    border: 0px;
+    border-radius: 2px;
+    margin-right: 15px;
+"> <a href="{% url 'del_fxn' pj_id=i.id %}" 
+  style="
+  text-decoration: none;
+  color: inherit;
+"> DELETE </a></button></li>
         {% endfor %}
       </ul>
+    {% else %}
+      <p style="font-size: 24px; text-align: center;"> Create a new Project </p>
+    {% endif %}
   </div>
+
     <!-- <div class="sideynav">
       <a href="#">Highlight</a>
       <a href="#">Clean</a>
@@ -76,3 +153,87 @@
   </main>
 </div>
 {% endblock content %}
+
+
+
+<!-- :root {--dark-color: rgb(0, 0, 0);
+  --white-color: white;
+  --light-color: grey;
+  --purple-color: rgb(153, 0, 255);
+  --navyblue-color: rgb(44, 7, 104);}
+  
+  *  {margin:0px;
+  padding: 0px;
+  box-sizing: border-box;}
+  
+  body  {font-family: 'fantasy', sans-serif;
+  background-color:var(--purple-color) ;
+  color: var(--dark-color);}
+  
+  .main {margin: auto; width:70%; padding: 50px;
+      display: flex;}
+  
+  nav {display: flex;
+  justify-content: space-between;
+  padding: 60px;}
+  
+  .wrapper {background-color: var(--white-color);
+      border-radius: 20px; padding:30px;}
+  
+  .topper {display:flex;}
+  
+  .grid-container {display: grid;
+      column-gap:10px;
+  grid-template-columns: auto auto auto auto auto auto;}
+  
+  .light-bg {border-radius: 49px;
+  margin-right:30px;}
+  
+  .name {align-self: center;
+  font-size: 3.5em;
+  letter-spacing: 6px;
+  font-family:'monospace', cursive;}
+  
+  .name span  {font-weight:900;}
+  
+  .surname { text-indent: 50px;}
+  
+  .contact-info {list-style:circle;
+  align-self: center;}
+  
+  .contact-item {margin-bottom: 5px; margin-left: 60px;}
+  
+  .contact-item a {text-decoration: none;}
+  
+  .item h3 {padding-left: 20px; line-height: 3em; 
+      color:var(--navyblue-color)}
+  
+  .item-body {line-height: 1.5em;
+       padding-bottom:30px; padding-left:140px ;}
+  
+  .project, a {text-decoration: none;}
+  
+  hr {border: 1px double rgb(111, 111, 184);}
+  
+  
+  /*for back-to-top button*/
+  #myBtn {display:none; position:fixed; bottom:20px; right:30px;
+  z-index:99; border:none; outline:none; background-color: rgb(61, 10, 59);
+  color: white; cursor: pointer; padding: 15px; border-radius: 4px;}
+  
+  #myBtn:hover {background-color: rgb(14, 160, 45);}
+  
+  
+  /*for theme change*/
+  .darkmodebox {position: fixed; top:90px;
+       background-color: rgb(2,10,31);
+        color:azure; right: 30px; z-index:99;}
+        
+        .darkmodebox:hover {background-color: rgb(3, 121, 121);}
+  
+  .darkmodeforsmall {display: none;}
+  
+  .mystyle {background-color: black;
+  color: white;}
+  
+  .mystyle h3 {color:aquamarine;} -->

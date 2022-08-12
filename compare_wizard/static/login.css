@@ -3,13 +3,12 @@ main.login-container {
     height: 100%; */
   width: 100vw;
   height: 100vh;
-  background: #ccd8e8;
   /* font-family: "Open Sans", sans-serif; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  padding: 30px 150px;
+  padding: 10px 120px;
 }
 
 .login-container .right {
@@ -17,6 +16,7 @@ main.login-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 60%;
 }
 
 .login-container .left {
@@ -25,22 +25,30 @@ main.login-container {
   flex-direction: column;
   justify-content: center;
   line-height: 35px;
+  width: 40%;
   /* width: 50vw; */
 }
 
+.login-container .left h1 {
+  color: #023E8A;
+  padding-bottom: 10px;
+}
+
 .login-container .left p {
-  color: #000000;
+  color: #023E8A;
   font-weight: 600;
 }
 
 .login-container .left form {
-  margin: 20px 0px;
+  margin: 15px 0px;
+  padding-top: 15px;
   font-size: 14px;
+  border-top: 1px solid #6C757D;
 }
 
 .login-container .left img {
   padding: 30px 0px;
-  width: 100px;
+  width: 80px;
 }
 
 .login-container .left form div {
@@ -52,14 +60,22 @@ main.login-container {
   /* display: block; */
   appearance: none;
   outline: 0;
-  border: 1px solid black;
-  color: #000;
-  background: #ccd8e8;
+  border: 1px solid #023E8A;
+  color: #191919;
+  background-color: #ccd8e8;
   /* width: 300px; */
   border-radius: 5px;
-  padding: 5px 15px;
-  font-size: 18px;
+  padding: 7.5px 15px;
+  font-size: 16px;
   margin-bottom: 10px;
+}
+
+.login-container .left form input:focus {
+  background: #ccd8e8;
+}
+
+.login-container .left form label.form-label {
+  color: #023E8A;
 }
 
 .login-container .left form input::placeholder {
@@ -74,14 +90,15 @@ main.login-container {
 }
 
 .login-container .left form button {
-  padding: 5px 20px;
+  /* width: 80%; */
+  padding: 7.5px 20px;
   background-color: #023e8a;
   border: none;
-  color: #ffffff;
+  color: #d4d4d4;
   font-size: 18px;
   font-weight: 500;
-  height: 56px;
-  border-radius: 10px;
+  /* height: 56px; */
+  border-radius: 5px;
   margin: 10px 0px;
 }
 

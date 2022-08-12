@@ -1,19 +1,25 @@
+main.login-container {
+  padding-top: 0;
+}
+
 .login-container .register-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   line-height: 35px;
-  width: 40vw;
+  width: 50vw;
+  padding-top: 20px;
+  margin-right: 80px;
 }
 
 .register-left img {
-  width: 100px;
+  width: 70px;
   margin-bottom: 20px;
 }
 
 .register-right img.infograph {
-  width: 300px;
+  width: 280px;
 }
 
 .register-right .image {
@@ -28,7 +34,8 @@
 
 .register-right p {
   font-size: 14px;
-  font-weight: bolder;
+  font-weight: bold;
+  color: #023e8a;
 }
 
 .login-container .register-left {
@@ -37,7 +44,7 @@
   justify-content: center;
   /* align-items: flex-start; */
   /* align-self: center; */
-  margin-left: 70px;
+  margin-left: 80px;
   margin-right: 40px;
   /* padding: 0px 50px; */
   flex-wrap: wrap;
@@ -45,7 +52,7 @@
   -webkit-box-shadow: 0px 0px 5px 3px rgba(2, 62, 138, 0.3);
   -moz-box-shadow: 0px 0px 5px 3px rgba(2, 62, 138, 0.3); */
   background-color: #ccd8e8;
-  width: 40vw;
+  width: 50vw;
   height: 80vh;
 }
 
@@ -59,12 +66,12 @@
   width: inherit;
 } */
 .register-left p {
-  color: #000000;
+  color: #191919;
   font-weight: bolder;
 }
 
 .register-left form {
-  margin: 10px 0px;
+  margin: 12.5px 0px;
   font-size: 14px;
   display: flex;
   flex-direction: column;
@@ -78,6 +85,7 @@
 
 .register-left form input,
 .register-left form .helptext {
+  margin-top: 5px;
   display: block;
 }
 
@@ -86,23 +94,26 @@
   flex-direction: column;
 }
 
-
 .register-left form input {
   display: block;
   appearance: none;
   outline: 0;
   border: 1px solid #023e8a;
-  color: #000;
+  color: #191919;
   background: #ccd8e8;
-  width: 100%;
+  width: 70%;
   border-radius: 5px;
-  padding: 3px 15px;
+  padding: 7px 15px;
   font-size: 14px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
+}
+
+.register-left form input:focus {
+  background-color: #f9fbff;
 }
 
 .register-left form input::placeholder {
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .register-left form span.helptext,
@@ -117,16 +128,22 @@
 }
 
 .register-left form button {
-  padding: 5px 20px;
+  padding: 7px 15px;
+  width: 70%;
   background-color: #023e8a;
   border: none;
-  color: #ffffff;
+  color: #d4d4d4;
   font-size: 16px;
   font-weight: 500;
   /* height: 56px; */
   border-radius: 5px;
-  margin: 5px 0px;
+  margin: 15px 0px 0px;
   display: block;
+}
+
+.login-container .register-left small.dontHave {
+  width: 70%;
+  margin-top: 0px;
 }
 
 .register-left form button:hover {
