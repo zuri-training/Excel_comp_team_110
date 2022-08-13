@@ -70,8 +70,12 @@ main.login-container {
   margin-bottom: 10px;
 }
 
+.login-container .left form input:hover {
+  background: #e6ecf3;
+}
+
 .login-container .left form input:focus {
-  background: #ccd8e8;
+  background: #f9fafb;
 }
 
 .login-container .left form label.form-label {
@@ -89,6 +93,9 @@ main.login-container {
   display: block;
 }
 
+.login-container .left form .forgot a:hover {
+  text-decoration: underline;
+}
 .login-container .left form button {
   /* width: 80%; */
   padding: 7.5px 20px;

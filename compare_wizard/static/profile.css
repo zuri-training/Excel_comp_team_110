@@ -1,10 +1,25 @@
-main .profile-page-container {
-  display: flex;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+main#dash.profile-page-container {
+  background-color: #ccd8e8;
+  width: 100vw;
+  height: 100vh;
+}
+
+.workspace main#dash {
+  margin-top: 0em;
 }
 
 main .profile-wrapper {
   display: flex;
-  padding: 3em 2em;
+  max-width: 100vw;
+  padding-top: 8.5em;
+  padding-left: 6em;
+  padding-right: 4em;
   margin: auto;
   justify-content: center;
 }
@@ -26,8 +41,8 @@ main .profile-wrapper {
 .profile-img {
   width: 180px;
   height: 180px;
-  padding: 2px;
-  border: 1px solid #6c757d6b;
+  padding: 5px;
+  border: 1px solid #023e8a;
   border-radius: 50%;
   margin: auto;
   justify-content: center;
@@ -77,6 +92,7 @@ main .profile-wrapper {
   color: #191919;
   appearance: none;
   outline: 0;
+  background-color: #f9fafbda;
   border: 1px solid #b7b7b7;
   border-radius: 5px;
   padding: 7.5px 15px;
@@ -99,13 +115,14 @@ main .profile-wrapper {
   cursor: pointer;
   color: #01152e;
   background-color: #b7b7b7;
+  border: 1px solid #023e8a;
 }
 
 .profile-details.profile-card .form-field input[type="file"] {
   padding: 0;
   height: max-content !important;
   position: inherit !important;
-  background: #fff;
+  background: #ccd8e8;
   border: none;
   margin-top: 10px;
 }
@@ -113,7 +130,7 @@ main .profile-wrapper {
 .profile-details.profile-card .form-field select#id_country {
   padding: 0.6em 0.5em;
   width: max-content;
-  /* background-color: #f9fafb; */
+  background-color: #f9fafbda;
   border: 1px solid #b7b7b7;
   border-radius: 5px;
   font-size: 12px;
@@ -126,6 +143,12 @@ main .profile-wrapper {
 .profile-details.profile-card .form-field select#id_country:hover,
 .profile-details.profile-card .form-field select#id_gender:focus,
 .profile-details.profile-card .form-field select#id_country:focus {
-  background-color: #f9f9f9;
+  background-color: #f9fafb;
   border: 1px solid #023e8a;
+}
+
+div.alert.alert-warning.alert-dismissible.fade.show {
+  padding-top: 6em;
+  background-color: #ccd8e8;
+  max-width: 100vw;
 }
