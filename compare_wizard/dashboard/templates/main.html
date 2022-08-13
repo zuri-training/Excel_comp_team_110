@@ -52,7 +52,7 @@
       <a href="#" id="rem">Remove</a>
       <a href="#">Compare</a>
       <a href="#">Merge</a>
-      <a href="#">Save Project</a>
+      <a href="{% url 'project' %}">Save Project</a>
     </div>
     <div class="page-content">
       <div class="uploads">
@@ -62,7 +62,9 @@
           alt="upload-icon"/>
           <div>
             <h4>File 1: Upload files/Paste URL</h4>
-            <input type="file" id="excel_file1" name='excel_file1'/>
+            <form method='post' action="" enctype="multipart/form-data">{% csrf_token %}
+            <input type="file" id="excel_file1" name='excel_file1'/> <input type='submit' value='+'>
+            </form>
           </div>
         </div>
         <!-- second file -->
@@ -71,7 +73,9 @@
           alt="upload-icon"/>
           <div>
             <h4>File 2: Upload files/Paste URL</h4>
-            <input type="file" id="excel_file2" name='excel_file1'/>
+            <form method='post' action="" enctype="multipart/form-data">{% csrf_token %}
+            <input type="file" id="excel_file2" name='excel_file2'/> <input type='submit' value='+'>
+            </form>
           </div>
         </div>
       </div>
@@ -285,11 +289,11 @@
         if (item.innerText === duplicates[i]) {
           item.parentElement.remove();
           duplicates.splice(i, 1);
-          console.log(duplicates.splice(i, 1))
         }
       }
     }
-   
+   const newFileTable = document.querySelector('table')
+   console.log(newFileTable)
   });
 
   // Downloading

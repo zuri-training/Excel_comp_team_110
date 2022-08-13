@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import Project
+from django.http import HttpResponseRedirect
+from .models import Project#, DocFile
 
 # Create your views here.
 # def workspace(request):
@@ -35,9 +36,9 @@ def new_project(request):
 
     # instances = Project.objects.all().filter(user = user)
     
-    # context = {'wanten': instances}
+    context = {'title': title}
 
-  return render(request, 'main.html')# redirect
+  return render(request, 'main.html', context)# redirect
 
 
 def del_fxn(request, pj_id):
@@ -51,4 +52,35 @@ def down_fxn(request, pj_id):
   instance = Project.objects.get(id=pj_id)
   
   return instance.file.url
+
+
+# def userData(request, title):
+#   user = User.objects.get(id = request.user.id)
+#   project = Project.objects.get(project_name=title)
+
+#   if DocFile.objects.filter(project=project).exists():
+#     return project
+#   else:
+#     instant = DocFile.objects.create(project=project)
+#     instant.save()
+
+#   return project
+
+
+# def save1(request):
+#   project = userData(request)
+#   instance = DocFile.objects.get(project=project)
+#   if request.method == 'POST':
+#     instance.file_one = request.FILES['excel_file1']
+
+#     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+# {% url 'save2' %}
+
+# def save2(request):
+#   project = userData(request)
+#   instance = DocFile.objects.get(project=project)
+#   if request.method == 'POST':
+#     instance.file_one = request.FILES['excel_file2']
+
+#     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
   
