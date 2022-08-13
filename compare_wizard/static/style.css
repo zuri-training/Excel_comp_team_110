@@ -241,9 +241,23 @@ section.features {
   color: #023e8a;
 }
 
-.features-header a:hover {
+.features-header a:hover,
+.features .features-header .features-link .arrow-jump:hover {
   color: #001e45;
+  cursor: pointer;
 }
+
+.features .features-header .features-link {
+  display: flex;
+  align-items: center;
+}
+
+.features .features-header .features-link .arrow-jump {
+  padding-left: 10px;
+  margin-top: 5px;
+  padding-bottom: 2px;
+}
+
  /* how to use stylling starts here */
 
 section.section-how {

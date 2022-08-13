@@ -485,37 +485,45 @@
 
 
     <section class="features">
-            <div class="features1">      
-
-              <div class="feature-image">
-                {% load static %} <img src="{% static 'images/feature.png' %}" alt="feature1 image">
-              </div>
-
-              <div class="features-header">
-                <h2 class="features-title">Analyze Swiftly like <span>MAGIC</span></h2>
-                <p class="features-paragraph">
-                  Speed is essential , with a turbo boost system, the wizard analyze thousands of datain your files to locate hidden and far to reach duplicates within seconds, and find solutions to your data problem.
-                </p>
-                <p><a href="#how-to-section">Find out how</a></p>
+      <div class="features1">      
+        <div class="feature-image">
+          {% load static %} <img src="{% static 'images/feature.png' %}" alt="feature1 image">
+        </div>
+        <div class="features-header">
+          <h2 class="features-title">Analyze Swiftly like <span>MAGIC</span></h2>
+          <p class="features-paragraph">
+            Speed is essential , with a turbo boost system, the wizard analyze thousands of datain your files to locate hidden and far to reach duplicates within seconds, and find solutions to your data problem.
+          </p>
+          <div class="features-link">
+            <div class="feature-link-a">
+              <a href="#how-to-section">Find out how</a>
+            </div>
+            <div class="feature-link-icon">
+              {% load static %} <img class="arrow-jump" src="{% static 'images/arrow.png' %}" alt="jump to how-to-section icon">
             </div>
           </div>
+        </div>
+      </div>
 
-
-            <div class="features2">
-              <div class="features-header">
-                <h2 class="features-title">Remove duplicates and solidify your <span>DATA</span></h2>
-                <p class="features-paragraph">
-                  Data integrity is essential to ensure your data is trusted on the go, with Compare wizard we combine the best of AI and integrity testing to give your data a boost.
-                </p>
-                <p>
-                  <a href="#how-to-section">Learn how</a>
-                </p>
-              </div>
-
-            <div class="feature-image">
-              {% load static %} <img src={% static "images/feature2.png" %} alt="feature2 image">
+      <div class="features2">
+        <div class="features-header">
+          <h2 class="features-title">Remove duplicates and solidify your <span>DATA</span></h2>
+          <p class="features-paragraph">
+            Data integrity is essential to ensure your data is trusted on the go, with Compare wizard we combine the best of AI and integrity testing to give your data a boost.
+          </p>
+          <div class="features-link">
+            <div class="feature-link-a">
+              <a href="#how-to-section">Learn how</a>
+            </div>
+            <div class="feature-link-icon">
+              {% load static %} <img class="arrow-jump" src="{% static 'images/arrow.png' %}" alt="jump to how-to-section icon">
             </div>
           </div>
+        </div>
+        <div class="feature-image">
+          {% load static %} <img src={% static "images/feature2.png" %} alt="feature2 image">
+        </div>
+      </div>
     </section>
 
     <!-- how t use our webapp -->
