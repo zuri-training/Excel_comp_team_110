@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="body-wrap boxed-container">
-  <header class="site-header">
+  <header class="site-header" id="headerNav">
     <div class="brand">
       <a href="#">
         <!--  svg logo start -->
@@ -526,7 +526,7 @@
       </div>
     </section>
 
-    <!-- how t use our webapp -->
+    <!-- how to use our webapp -->
     <section class="section-how">
       <div class="how-to" id="how-to-section">
         <h2 class="how-to-title">How to use <span>Compare Wizard</span></h2>
@@ -749,6 +749,15 @@
     </div>
     </div>
   </footer>
-
 </div>
+<script>
+  var headerNav = document.getElementById('headerNav');
+  window.onscroll = function () {
+    if (window.scrollY > 22) {
+      headerNav.classList.add('scrolled');
+    } else {
+      headerNav.classList.remove('scrolled');
+    }
+  };
+</script>
 {% endblock content %}
