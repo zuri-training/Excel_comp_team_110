@@ -406,7 +406,9 @@
           <a href="{% url 'home' %}">Home</a>
         </li>
         {% if user.is_authenticated %}
-          
+          <li>
+            <a href="{% url 'project' %}">My Projects</a>
+          </li>
           <li>
             <a href="{% url 'community' %}">Community</a>
           </li>

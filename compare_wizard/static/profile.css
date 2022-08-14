@@ -34,6 +34,11 @@ main .profile-wrapper {
   margin-bottom: 1em;
 }
 
+.profile-img-container {
+  background-color: #f9fafb;
+  border-radius: 50%;
+}
+
 .profile-img {
   width: 180px;
   height: 180px;
@@ -80,7 +85,7 @@ main .profile-wrapper {
   width: 130px;
   font-weight: 700;
   font-size: 16px;
-  color: #6c757d;
+  color: #303030;
 }
 .profile-details.profile-card .form-field input {
   width: 220px;
