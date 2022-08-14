@@ -3,7 +3,9 @@
 <div class="workspace">
   <header>
     <div>
-      {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+      <a href="{% url 'home' %}">
+        {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+      </a>
     </div>
     <!-- <div class="search-bar">
       {% load static %} <img src={% static "images/icons8-search.svg" %} alt="search-icon">
@@ -46,15 +48,15 @@
   </header>
 
   <!-- after the navbar -->
-  <main id="dash" >
-    {% comment %} style="margin: 12% auto">
+  <main id="dash">
+    {% comment %} 
     <a href="{% url 'dashboard' %}"><button>Start Project</button></a> {% endcomment %}
     <!-- new side bar -->
     <div class='main-1' style="display: block;box-sizing: border-box;margin-bottom: 100px;">
       <form action="{% url 'new_project' %}" method="post" enctype="multipart/form-data" id="p-form" style="
-      margin-top: 10px;
+      margin-top: 4em;
       background-color: #ccd8e8;
-      padding: 30px 60px;
+      padding: 70px 60px 30px;
   ">
           {% csrf_token %}
           <div style="

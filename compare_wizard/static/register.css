@@ -108,8 +108,12 @@ main.login-container {
   margin-bottom: 7px;
 }
 
+.register-left form input:hover {
+  background: #e6ecf3;
+}
+
 .register-left form input:focus {
-  background-color: #f9fbff;
+  background-color: #f9fafb;
 }
 
 .register-left form input::placeholder {

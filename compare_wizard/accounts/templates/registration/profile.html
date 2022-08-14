@@ -4,7 +4,9 @@
 <div class="workspace">
   <header>
     <div>
-      {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+      <a href="{% url 'home' %}"> 
+        {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+      </a>
     </div>
     <div>
       <nav class="navybar">
@@ -34,9 +36,9 @@
   </header>
 
   <!-- main code for profile page below -->
-  <main id="dash" class="profile-page-container">
+  <main id="profile-page" class="profile-page-container">
     {% if user_form.errors %}
-    <div class="alert alert-danger alert-dismissible" role="alert">
+    <div class="alert alert-danger alert-dismissible" role="alert" style="z-index:100;">
       <div id="form_errors">
         {% for key, value in user_form.errors.items %}
         <strong>{{ value }}</strong>
