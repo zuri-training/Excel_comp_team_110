@@ -4,14 +4,10 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-main#dash.profile-page-container {
+main#profile-page.profile-page-container {
   background-color: #ccd8e8;
   width: 100vw;
   height: 100vh;
-}
-
-.workspace main#dash {
-  margin-top: 0em;
 }
 
 main .profile-wrapper {

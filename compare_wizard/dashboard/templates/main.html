@@ -3,7 +3,9 @@
 <div class="workspace">
   <header>
     <div class="workspace-logo">
-      {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+      <a href="{% url 'home' %}">
+        {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+      </a>
     </div>
     <!-- <div class="search-bar">
       {% load static %} <img src={% static "images/icons8-search.svg" %} alt="search-icon">
@@ -54,7 +56,7 @@
       <a href="#">Merge</a>
       <a href="{% url 'project' %}">Save Project</a>
     </div>
-    <div class="page-content">
+    <div class="page-content" id="project-page-cont">
       <div class="uploads">
         <!-- my work -->
         <div class="file">

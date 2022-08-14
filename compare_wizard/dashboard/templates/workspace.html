@@ -4,7 +4,9 @@
   <header>
     <nav>
       <div class="logo">
-        {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+        <a href="{% url 'home' %}"></a>
+          {% load static %} <img src={% static "images/logo.svg" %} alt="logo">
+        </a>
       </div>
 
       <div class="other-icons">

@@ -10,7 +10,7 @@ main {
 }
 .dashboard-community .community-banner {
     text-align: center;
-    padding: 5em 2em 3em;
+    padding: 9em 2em 3em;
 }
 .dashboard-community .community-banner h2 {
     font-size: 3.5em;
@@ -171,7 +171,7 @@ main {
 }
 @media only screen and (max-width: 1250px) {
     .dashboard-community .community-banner {
-        padding: 4em 2em 3em;
+        padding: 6em 2em 3em;
     }
     .dashboard-community .community-banner h2 {
         font-size: 3em;
@@ -190,7 +190,7 @@ main {
 }
 @media only screen and (max-width: 650px) {
     .dashboard-community .community-banner {
-        padding: 3em 2em 3em;
+        padding: 7em 2em 3em;
     }
     .dashboard-community .community-banner h2 {
         font-size: 1.75em;
@@ -213,7 +213,7 @@ main {
 }
     @media only screen and (max-width: 450px) {
         .dashboard-community .community-banner {
-            padding: 2em 2em .8em;
+            padding: 7em 2em .8em;
         }
         .dashboard-community .community-banner h2 {
             font-size: 1.5em;
