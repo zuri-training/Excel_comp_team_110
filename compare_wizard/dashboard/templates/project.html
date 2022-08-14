@@ -48,15 +48,14 @@
   </header>
 
   <!-- after the navbar -->
-  <main id="dash">
+  <main id="dash" style="background-color:#ccd8e8; min-height: 100vh;">
     {% comment %} 
     <a href="{% url 'dashboard' %}"><button>Start Project</button></a> {% endcomment %}
     <!-- new side bar -->
-    <div class='main-1' style="display: block;box-sizing: border-box;margin-bottom: 100px;">
+    <div class='main-1' style="display: block;box-sizing: border-box;margin-bottom: 50px;">
       <form action="{% url 'new_project' %}" method="post" enctype="multipart/form-data" id="p-form" style="
       margin-top: 4em;
-      background-color: #ccd8e8;
-      padding: 70px 60px 30px;
+      padding: 70px 60px 20px;
   ">
           {% csrf_token %}
           <div style="
@@ -69,7 +68,7 @@
               border: 1px solid #b7b7b7;
               background-color: #f9fafb;
               border-radius: 5px;
-              padding: 7.5px 10px;
+              padding: 5px 10px;
               width: 250px;
               font-size: 16px;
               color: #191919;
