@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,6 +127,7 @@ STATIC_URL = 'static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -165,3 +167,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get("postmaster@sandbox30a21d5ad91c44629f761f747a7fd53a.mailgun.org")
 EMAIL_HOST_PASSWORD = os.environ.get("27469a82b46249bdbe2450d0603b84a0-2bab6b06-5ceb64ae")
 EMAIL_USE_TLS = True
+
+
+# Activate Django_Heroku
+django_heroku.settings(locals())
