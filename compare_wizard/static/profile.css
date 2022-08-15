@@ -13,7 +13,7 @@ main#profile-page.profile-page-container {
 main .profile-wrapper {
   display: flex;
   max-width: 100vw;
-  padding-top: 8.5em;
+  padding-top: 9em;
   padding-left: 6em;
   padding-right: 4em;
   margin: auto;
@@ -149,7 +149,11 @@ main .profile-wrapper {
 }
 
 div.alert.alert-warning.alert-dismissible.fade.show {
-  padding-top: 6em;
+  position: absolute;
+  top: 6em;
+  left: 10px;
   background-color: #ccd8e8;
-  max-width: 100vw;
+  /* padding-top: 6em;
+  background-color: #ccd8e8;
+  max-width: 100vw; */
 }
