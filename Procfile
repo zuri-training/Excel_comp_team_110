@@ -1,0 +1,1 @@
+web gunicorn compare_wizard.wsgi:application --log-file -
