@@ -3,7 +3,8 @@
   <img width="150" height="120" src="logo.jpg">
 </p>
 A platform that helps users compare the content of excel files <https://docs.google.com/document/d/1VhBXWWhO64190HyiqDvl8ANx8rS-RiDRvHcwEz6hJvM/edit>
-Deployed at <oreoA.pythonanywhere.com>
+
+## Deployed at http://oreoa.pythonanywhere.com
 
 ## Introduction
 An I4G x Zuri Project- This platform reads an excel file and search for duplicates, then ask User to pick one of the options to remove duplicate and print a separate file or in the same file, highlight duplicate and print in a seperate file or the same file 
